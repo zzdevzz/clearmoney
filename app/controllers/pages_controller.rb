@@ -7,6 +7,6 @@ class PagesController < ApplicationController
   def education
   end
 
-  def Dashboard
+  def dashboard
   end
 end
