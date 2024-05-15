@@ -1,7 +1,7 @@
 class IncomesController < ApplicationController
 
   def index
-    @incomes = Income.all
+    @incomes = Income.where(user: current_user)
   end
 
   def new

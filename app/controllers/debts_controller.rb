@@ -1,7 +1,7 @@
 class DebtsController < ApplicationController
 
   def index
-    @debts = Debt.all
+    @debts = Debt.where(user: current_user)
   end
 
   def new
