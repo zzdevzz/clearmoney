@@ -14,6 +14,10 @@ class GoalsController < ApplicationController
 
   end
 
+  def index
+    @goals = Goal.all
+  end
+
   private
 
   def goal_params
