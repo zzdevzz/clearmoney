@@ -15,7 +15,7 @@ class InvestmentsController < ApplicationController
   end
 
   def index
-    @investments = Investment.all
+    @investments = Investment.where(user: current_user)
   end
 
   private

@@ -17,5 +17,5 @@ Rails.application.routes.draw do
   resources :investments, only: [ :new, :create, :index ]
   resources :debts, only: [ :new, :create, :index ]
   resources :expenses, only: [ :new, :create, :index ]
-
+  resources :savings, only: [ :new, :create, :index]
 end

@@ -15,7 +15,8 @@ class GoalsController < ApplicationController
   end
 
   def index
-    @goals = Goal.all
+
+    @goals = Goal.where(user: current_user)
   end
 
   private
