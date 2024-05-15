@@ -1,0 +1,12 @@
+ <%= f.input :title %>
+  <%# <%= f.input :amount %> %>
+  <%= f.input :company_name %>
+  <%= f.input :interest %>
+  <%= f.input :notes %>
+  <%= f.input :pay_by %>
+  <%= f.input :amount %>
+  <%= f.range_field :amount, :min=>0, :max=>200, :class=>"slide", :id=>"slider1"%>
+  <%= f.submit "Submit review", class: "btn btn-primary" %>
+<% end %>
+
+
