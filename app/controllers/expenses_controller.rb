@@ -22,7 +22,7 @@ class ExpensesController < ApplicationController
   private
 
   def expense_params
-    params.require(:expense).permit(:name, :amount, :category,)
+    params.require(:expense).permit(:name, :amount, :category)
   end
 
 end
@@ -32,6 +32,3 @@ end
 
 
 
-t.string "name"
-t.string "category"
-t.float "amount"

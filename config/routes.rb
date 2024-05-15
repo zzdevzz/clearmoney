@@ -10,12 +10,13 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  get 'pages/dashboard', as: "dashboard"
-  get 'pages/educational_resources', as: "educational_resources"
+  get '/dashboard', to: "pages#dashboard"
+  get '/educational_resources', to: "pages#educational_resources"
   resources :pages, only: [ :education, :dashboard ]
   resources :goals, only: [ :new, :create, :index ]
   resources :investments, only: [ :new, :create, :index ]
   resources :debts, only: [ :new, :create, :index ]
   resources :expenses, only: [ :new, :create, :index ]
   resources :savings, only: [ :new, :create, :index]
+  resources :incomes, only: [ :new, :create, :index]
 end
