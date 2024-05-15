@@ -8,6 +8,6 @@ class PagesController < ApplicationController
 
   end
 
-  def Dashboard
+  def dashboard
   end
 end

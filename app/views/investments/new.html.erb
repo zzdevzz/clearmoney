@@ -1,9 +1,7 @@
-<h1>goals</h1>
+<h1>investments</h1>
 
 <%= simple_form_for(@goal) do |f| %>
   <%= f.input :title %>
   <%= f.input :amount %>
-  <%= f.input :notes %>
-  <%= f.input :date_by %>
   <%= f.submit "Submit review", class: "btn btn-primary" %>
 <% end %>
