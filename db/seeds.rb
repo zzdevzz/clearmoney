@@ -8,4 +8,13 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-User.new()
+myUser = User.find(1)
+income1 = Income.create(name: "primary", amount: 25000)
+income2 = Income.create(name: "OF", amount: 25000)
+
+# income = [income1, income2]
+goal1 = Goal.create(title: "Safari", amount: 2000, notes: "Kenya is lit af")
+goal2 = Goal.create(title: "House Deposit", amount: 20000, notes: "I hope this is enough")
+goals = [goal1, goal2]
+
+myUser.goals = goals
