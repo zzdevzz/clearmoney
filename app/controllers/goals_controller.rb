@@ -11,12 +11,13 @@ class GoalsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
-
   end
 
   def index
-
-    @goals = Goal.where(user: current_user)
+    @goals = Goal.all
+    respond_to do |format|
+      format.html { render partial: "shared/index", locals: { goals: @goals }, layout: false }
+    end
   end
 
   private

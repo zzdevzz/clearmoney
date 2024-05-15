@@ -14,12 +14,8 @@
   <body>
     <%= render "shared/navbar" %>
     <%= render "shared/flashes" %>
-    <% if controller_name == 'pages' && action_name == 'home' %>
+    <div class="container mt-5 min-height">
       <%= yield %>
-    <% else %>
-      <div class="container mt-5 min-height">
-        <%= yield %>
-      </div>
-    <% end %>
+    </div>
   </body>
 </html>

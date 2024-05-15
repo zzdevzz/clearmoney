@@ -61,9 +61,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_14_162556) do
     t.string "first_name"
     t.string "last_name"
     t.string "username"
-    t.integer "student loan plan"
-    t.float "current_income"
-    t.float "current_expenditure"
     t.float "pension_contribution"
     t.float "yearly_bonus"
     t.index ["email"], name: "index_users_on_email", unique: true
