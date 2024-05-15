@@ -1,0 +1,27 @@
+<turbo-frame id="content">
+  <h1><%=attribute.name %> index page</h1>
+  <div class="container">
+    <div class="row">
+      <%= render "shared/dashboard_actions", class: "card" %>
+      <div class="col-6">
+        <div class="card">
+          <h3> <%=attribute.name %> Breakdown </h3>
+          <h4> <%= attribute[0].amount + attribute[1].amount %></h4>
+          <%= image_tag "chart-js-example-chart-doughnut.png", style: "width: 150px; height: 150px; object-fit: cover"%>
+        </div>
+        <div class="card">
+          <h3> <%=attribute.name %> Targets </h3>
+          <%= image_tag "chart-js-example-chart-bar.png", style: "width: 150px; height: 150px;"%>
+        </div>
+      </div>
+      <div class="card-container mt-5 row g-3 flex-sm-column w-25 p-3 card col">
+        <h3> Sources </h3>
+        <% attribute.each do |item| %>
+          <%= link_to("#", class: "col-12 bg-primary") do %>
+            <%= render "/shared/card", item: item %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  <div>
+</turbo-frame>

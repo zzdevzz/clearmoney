@@ -9,13 +9,20 @@
 #   end
 
 myUser = User.find(1)
-income1 = Income.create(name: "primary", amount: 25000)
-income2 = Income.create(name: "OF", amount: 25000)
+invest1 = Investment.create(name: "Netflix", quantity: 25, buy_price: 100)
+invest2 = Investment.create(name: "Meta", quantity: 20, buy_price: 50)
+invest3 = Investment.create(name: "Apple", quantity: 10, buy_price: 150)
 
-# income = [income1, income2]
+invest = [invest1, invest2, invest3]
 goal1 = Goal.create(title: "Safari", amount: 2000, notes: "Kenya is lit af")
 goal2 = Goal.create(title: "House Deposit", amount: 20000, notes: "I hope this is enough")
 goal3 = Goal.create(title: "bookcamp", amount: 10000, notes: "I hope this is enough")
 goals = [goal1, goal2, goal3]
 
+saving1 = Saving.create(name: "main", amount: 2000)
+saving2 = Saving.create(name: "emergency fund", amount: 1000)
+savings = [saving1, saving2]
+
 myUser.goals = goals
+myUser.investments = invest
+myUser.savings = savings
