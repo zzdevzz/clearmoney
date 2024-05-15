@@ -14,6 +14,10 @@ class InvestmentsController < ApplicationController
     end
   end
 
+  def index
+    @investments = Investment.all
+  end
+
   private
 
   def investment_params
