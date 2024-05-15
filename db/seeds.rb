@@ -15,6 +15,7 @@ income2 = Income.create(name: "OF", amount: 25000)
 # income = [income1, income2]
 goal1 = Goal.create(title: "Safari", amount: 2000, notes: "Kenya is lit af")
 goal2 = Goal.create(title: "House Deposit", amount: 20000, notes: "I hope this is enough")
-goals = [goal1, goal2]
+goal3 = Goal.create(title: "bookcamp", amount: 10000, notes: "I hope this is enough")
+goals = [goal1, goal2, goal3]
 
 myUser.goals = goals
