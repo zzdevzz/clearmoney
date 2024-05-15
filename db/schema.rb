@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_14_162556) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_15_194503) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -50,6 +50,26 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_14_162556) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "investments", force: :cascade do |t|
+    t.string "name"
+    t.float "buy_price"
+    t.integer "quantity"
+    t.date "buy_date"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_investments_on_user_id"
+  end
+
+  create_table "savings", force: :cascade do |t|
+    t.string "name"
+    t.float "amount"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_savings_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -61,9 +81,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_14_162556) do
     t.string "first_name"
     t.string "last_name"
     t.string "username"
-    t.integer "student loan plan"
-    t.float "current_income"
-    t.float "current_expenditure"
     t.float "pension_contribution"
     t.float "yearly_bonus"
     t.index ["email"], name: "index_users_on_email", unique: true
@@ -71,4 +88,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_14_162556) do
   end
 
   add_foreign_key "goals", "users"
+  add_foreign_key "investments", "users"
+  add_foreign_key "savings", "users"
 end

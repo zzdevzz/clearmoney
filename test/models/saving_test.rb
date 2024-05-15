@@ -1,6 +1,6 @@
 require "test_helper"
 
-class SavingsControllerTest < ActionDispatch::IntegrationTest
+class SavingTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
