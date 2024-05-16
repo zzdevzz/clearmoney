@@ -1,40 +1,85 @@
 // Specific CSS for your home-page
-.landing {
-  color: whitesmoke;
-}
-
-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index:-100;
-  height: 100vh; /* 100% of the viewport height */
-  width: 100vw; /* 100% of the viewport width */
-  overflow: hidden;
-  position: relative;
-  object-fit: cover;
-  filter: brightness(0.50);
-  background-color: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5));
-}
 
 .navbar-start{
   position: fixed;
   top: 0;
 }
 
-.landing .content {
-  position: fixed;
-  top: 50%; left: 20%; transform: translate(-20%, -50%);
-  width: 40%;
-  background: rgba(0, 0, 0, 0.5);
-  color: #f1f1f1;
-  border-radius: 2rem;
+
+video {
+  top: 0;
+  left: 0;
+  z-index:-100;
+  height: 100vh; /* 100% of the viewport height */
+  width: 100%; /* 100% of the viewport width */
+  overflow: hidden;
+  object-fit: cover;
+  filter: brightness(0.50);
+  background-color: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5));
 }
 
-.question {
-  background-color: #0044FF; /* Blue background for the question */
-  color: #FFF; /* White text on the blue background */
-  padding: 10px 20px; /* Padding inside */
-  margin: -10px -20px 10px -20px; /* Breaks out of the card padding */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* Shadow effect */
+.landing {
+  position: relative;
+}
+
+
+.landing .content {
+  color: whitesmoke;
+  position: absolute;
+  top: 50%; left: 20%; transform: translate(-20%, -50%);
+  width: 40%;
+  min-width: 470px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: brightness(1.5) blur(1rem);
+  color: #f1f1f1;
+  border-radius: 2rem;
+  transition: all 0.3s;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+
+  &:hover{
+    transform-origin: center;
+    transform: translate(-20%, -50%) rotate3d(1, 3, -1, 20deg);
+    backdrop-filter: brightness(1.95) blur(1rem);
+    box-shadow: .5rem .5rem 8px rgba(1,1,1,0.2);
+  }
+
+  .strip {
+    background-color: #0044FF; /* Blue background for the question */
+    color: #FFF; /* White text on the blue background */
+    padding: 1rem 3rem; /* Padding inside */
+    margin: .5rem -3rem; /* Breaks out of the card padding */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* Shadow effect */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  }
+
+}
+
+
+.item {
+
+  width: 25%;
+  min-width: 200px;
+  text-align: center;
+  transition: all 1s;
+
+  &:hover{
+
+    i{
+      color: gold;
+    }
+  }
+
+  h4 {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  i{
+    font-size: 4rem;
+    margin: 1rem;
+  }
+
+  p{
+
+  }
 }

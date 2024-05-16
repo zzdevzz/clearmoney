@@ -32,8 +32,8 @@ myUser = User.find(1)
 invest1 = Investment.create(name: "Netflix", quantity: 25, buy_price: 100)
 invest2 = Investment.create(name: "Meta", quantity: 20, buy_price: 50)
 invest3 = Investment.create(name: "Apple", quantity: 10, buy_price: 150)
-
 invest = [invest1, invest2, invest3]
+
 goal1 = Goal.create(name: "Safari", amount: 2000, notes: "Kenya is lit af")
 goal2 = Goal.create(name: "House Deposit", amount: 20000, notes: "I hope this is enough")
 goal3 = Goal.create(name: "bookcamp", amount: 10000, notes: "I hope this is enough")
@@ -44,7 +44,30 @@ saving2 = Saving.create(name: "emergency fund", amount: 1000)
 saving3 = Saving.create(name: "university", amount: 20000)
 savings = [saving1, saving2, saving3]
 
+income1 = Income.create(name: "primary", amount: 30000)
+income2 = Income.create(name: "OF", amount: 10000)
+income3 = Income.create(name: "Freelance", amount: 5000)
+incomes = [income1, income2, income3]
+
+debt1 = Debt.create(name: "bank loan", amount: 5000)
+debt2 = Debt.create(name: "car", amount: 12500)
+debts = [debt1, debt2]
+
+expense1 = Expense.create(name: "food", amount: 500)
+expense2 = Expense.create(name: "light", amount: 40)
+expense3 = Expense.create(name: "gas", amount: 60)
+expense4 = Expense.create(name: "electricity", amount: 100)
+expense5 = Expense.create(name: "rent", amount: 1000)
+expense6 = Expense.create(name: "light bill", amount: 100)
+expense7 = Expense.create(name: "broadband", amount: 60)
+expense8 = Expense.create(name: "car", amount: 130)
+expense9 = Expense.create(name: "bank loan", amount: 100)
+expenses = [expense1, expense2, expense3, expense4, expense5, expense6, expense6, expense7, expense8, expense9]
+
+
 myUser.goals = goals
 myUser.investments = invest
 myUser.savings = savings
-
+myUser.incomes = incomes
+myUser.debts = debts
+myUser.expenses = expenses

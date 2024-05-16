@@ -78,7 +78,4 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  <<: *default
-  database: clearmoney_production
-  username: clearmoney
-  password: <%= ENV["CLEARMONEY_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
