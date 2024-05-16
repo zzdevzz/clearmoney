@@ -8,15 +8,16 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
+myUser = User.create(first_name: "Dev", last_name: "Isthebest", username: "dev", email: "d3@test.com", password: "123456")
 myUser = User.find(1)
 invest1 = Investment.create(name: "Netflix", quantity: 25, buy_price: 100)
 invest2 = Investment.create(name: "Meta", quantity: 20, buy_price: 50)
 invest3 = Investment.create(name: "Apple", quantity: 10, buy_price: 150)
 
 invest = [invest1, invest2, invest3]
-goal1 = Goal.create(title: "Safari", amount: 2000, notes: "Kenya is lit af")
-goal2 = Goal.create(title: "House Deposit", amount: 20000, notes: "I hope this is enough")
-goal3 = Goal.create(title: "bookcamp", amount: 10000, notes: "I hope this is enough")
+goal1 = Goal.create(name: "Safari", amount: 2000, notes: "Kenya is lit af")
+goal2 = Goal.create(name: "House Deposit", amount: 20000, notes: "I hope this is enough")
+goal3 = Goal.create(name: "bookcamp", amount: 10000, notes: "I hope this is enough")
 goals = [goal1, goal2, goal3]
 
 saving1 = Saving.create(name: "main", amount: 2000)

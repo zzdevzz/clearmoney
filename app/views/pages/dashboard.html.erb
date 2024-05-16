@@ -1,14 +1,20 @@
 <div id="main_layout">
   <nav class="bg-success">
     <!-- Links trigger frame updates without full page refresh -->
-    <a href="/incomes" data-turbo-frame="content">My Income</a>
+    <%# <a href="/incomes" data-turbo-frame="content">My Income</a>
     <a href="/expenses" data-turbo-frame="content">My Expenses</a>
     <a href="/goals" data-turbo-frame="content">My goals</a>
     <a href="/savings" data-turbo-frame="content">My savings</a>
-    <a href="/investments" data-turbo-frame="content">My Investments</a>
+    <a href="/investments" data-turbo-frame="content">My Investments</a> %>
   </nav>
   <!-- Content area that gets updated -->
-  <turbo-frame id="content">
-    <!-- Initial content or a spinner/loader can go here -->
-  </turbo-frame>
+  <div class = "container">
+    <div class="row">
+      <%= render "shared/dashboard_actions_new" %>
+      <turbo-frame id="content" class="col-10">
+        <%= render "shared/index", attribute: @investments %>
+        <!-- Initial content or a spinner/loader can go here -->
+      </turbo-frame>
+    </div>
+  </div>
 </div>

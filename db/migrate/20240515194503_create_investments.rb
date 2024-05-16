@@ -4,6 +4,7 @@ class CreateInvestments < ActiveRecord::Migration[7.1]
       t.string :name
       t.float :buy_price
       t.integer :quantity
+      t.float :amount
       t.date :buy_date
       t.references :user, null: false, foreign_key: true
 
