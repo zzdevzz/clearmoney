@@ -33,7 +33,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_15_194503) do
   end
 
   create_table "goals", force: :cascade do |t|
-    t.string "title"
+    t.string "name"
     t.float "amount"
     t.string "notes"
     t.date "date_by"
@@ -54,6 +54,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_15_194503) do
     t.string "name"
     t.float "buy_price"
     t.integer "quantity"
+    t.float "amount"
     t.date "buy_date"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false

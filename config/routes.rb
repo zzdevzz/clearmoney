@@ -20,7 +20,5 @@ Rails.application.routes.draw do
   resources :savings, only: [ :new, :create, :index]
   resources :incomes, only: [ :new, :create, :index]
 
-  namespace :charts do
-    
-  end
+  
 end
