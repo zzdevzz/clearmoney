@@ -10,9 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_15_194503) do
+<<<<<<< finance
+ActiveRecord::Schema[7.1].define(version: 2024_05_15_113233) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "articles", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.string "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "debts", force: :cascade do |t|
     t.string "company_name"
@@ -35,7 +44,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_15_194503) do
   end
 
   create_table "goals", force: :cascade do |t|
+
     t.string "name"
+
     t.float "amount"
     t.string "notes"
     t.date "date_by"
@@ -53,6 +64,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_15_194503) do
     t.index ["user_id"], name: "index_incomes_on_user_id"
   end
 
+<<<<<<< finance
+=======
   create_table "investments", force: :cascade do |t|
     t.string "name"
     t.float "buy_price"
@@ -74,6 +87,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_15_194503) do
     t.index ["user_id"], name: "index_savings_on_user_id"
   end
 
+>>>>>>> master
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -94,4 +108,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_15_194503) do
   add_foreign_key "goals", "users"
   add_foreign_key "investments", "users"
   add_foreign_key "savings", "users"
+>>>>>>> master
 end

@@ -1,2 +1,21 @@
-<h1>Clear money</h1>
-<p>Where does all your money go?</p>
+
+  <%# <video autoplay muted loop>
+    <source src="/app/assets/images/accounting-video.mp4" type="video/mp4">
+  </video> %>
+<section class="landing">
+  <%= video_tag asset_path("accounting-video.mp4"), autoplay: true, loop: true, muted: true, class: "video" %>
+  <div class="navbar-start ml-5">
+    <%= link_to root_path, class: "navbar-brand" do %>
+      <%= image_tag "logo.png", size: "75x75" %>
+    <% end %>
+    <h1 class="fw-bold d-inline-block">ClearMoney</h1>
+  </div>
+  <div class="content ml-5 p-5">
+    <h2 class="text-uppercase fw-light fs-4">Managing Money just got easier.</h2>
+    <h3 class="text-capitalize fw-bold question">Ready to learn about your money? </h3>
+    <p>“You can’t improve what you don’t measure”.
+        We make it easy for you to understand how your money is broken down. no need to be a whiz kid with the numbers. everything is visualized so its easy for you to understand, your money. clearly. </p>
+    <%= link_to "Get Started", dashboard_path, class: "btn btn-warning" %>
+  </div>
+</section>
+

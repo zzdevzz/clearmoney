@@ -1,1 +1,40 @@
 // Specific CSS for your home-page
+.landing {
+  color: whitesmoke;
+}
+
+video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index:-100;
+  height: 100vh; /* 100% of the viewport height */
+  width: 100vw; /* 100% of the viewport width */
+  overflow: hidden;
+  position: relative;
+  object-fit: cover;
+  filter: brightness(0.50);
+  background-color: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5));
+}
+
+.navbar-start{
+  position: fixed;
+  top: 0;
+}
+
+.landing .content {
+  position: fixed;
+  top: 50%; left: 20%; transform: translate(-20%, -50%);
+  width: 40%;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  border-radius: 2rem;
+}
+
+.question {
+  background-color: #0044FF; /* Blue background for the question */
+  color: #FFF; /* White text on the blue background */
+  padding: 10px 20px; /* Padding inside */
+  margin: -10px -20px 10px -20px; /* Breaks out of the card padding */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* Shadow effect */
+}
