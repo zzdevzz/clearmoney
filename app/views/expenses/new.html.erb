@@ -1,0 +1,9 @@
+<%= simple_form_for(@expense) do |f| %>
+  <%= f.input :title %>
+  <%# <%= f.input :amount %> %>
+  <%= f.input :name %>
+  <%= f.input :category %>
+   <%= f.input :amount %>
+  <%= f.range_field :amount, :min=>0, :max=>200, :class=>"slide", :id=>"slider1"%>
+  <%= f.submit "Submit review", class: "btn btn-primary" %>
+<% end %>

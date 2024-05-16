@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< finance
 ActiveRecord::Schema[7.1].define(version: 2024_05_15_113233) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,7 +42,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_15_113233) do
   end
 
   create_table "goals", force: :cascade do |t|
-    t.string "title"
+
+    t.string "name"
+
     t.float "amount"
     t.string "notes"
     t.date "date_by"
@@ -58,6 +61,30 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_15_113233) do
     t.datetime "updated_at", null: false
   end
 
+<<<<<<< finance
+=======
+  create_table "investments", force: :cascade do |t|
+    t.string "name"
+    t.float "buy_price"
+    t.integer "quantity"
+    t.float "amount"
+    t.date "buy_date"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_investments_on_user_id"
+  end
+
+  create_table "savings", force: :cascade do |t|
+    t.string "name"
+    t.float "amount"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_savings_on_user_id"
+  end
+
+>>>>>>> master
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -76,4 +103,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_15_113233) do
   end
 
   add_foreign_key "goals", "users"
+  add_foreign_key "investments", "users"
+  add_foreign_key "savings", "users"
+>>>>>>> master
 end

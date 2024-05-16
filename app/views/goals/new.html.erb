@@ -1,0 +1,9 @@
+<h1>goals</h1>
+
+<%= simple_form_for(@goal) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :notes %>
+  <%= f.input :date_by %>
+  <%= f.range_field :amount, :min=>0, :max=>200, :class=>"slide", :id=>"slider1"%>
+  <%= f.submit "Submit review", class: "btn btn-primary" %>
+<% end %>

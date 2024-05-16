@@ -1,0 +1,25 @@
+<turbo-frame id="content">
+  <p> <%= controller_path %></p>
+  <div class="row">
+    <div class="col-9">
+      <div class="card p-4">
+        <h3> <%=attribute.name %> Breakdown </h3>
+        <h4> <%= attribute.sum(&:amount) %></h4>
+        <%= pie_chart attribute.group("name").sum("amount"), donut: true %>
+      </div>
+      <div class="card">
+        <h3> <%=attribute.name %> Targets </h3>
+        <%= image_tag "chart-js-example-chart-bar.png", style: "width: 150px; height: 150px;"%>
+      </div>
+    </div>
+    <div class="card-container row g-3 w-25 p-3 card col mt-0">
+      <h3> Sources </h3>
+      <% attribute.each do |item| %>
+        <%= link_to url_for(controller: controller_path, action: 'show', id: item), class: "col-12 bg-primary", data: { turbo: false } do %>
+          <%= render "/shared/card", item: item %>
+        <% end %>
+      <% end %>
+      <%= link_to "Add new", url_for(controller: controller_path, action: 'new'), class: "btn btn-warning", data: { turbo: false } %>
+    </div>
+  </div>
+</turbo-frame>

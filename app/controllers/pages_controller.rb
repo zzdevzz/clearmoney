@@ -4,6 +4,16 @@ class PagesController < ApplicationController
   def home
   end
 
-  def Dashboard
+
+  def new
+  end
+
+  def show
+  end
+
+  def dashboard
+    user = current_user
+    @goals = user.goals
+    @investments = Investment.where(user: current_user)
   end
 end

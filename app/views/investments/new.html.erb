@@ -1,0 +1,7 @@
+<h1>investments</h1>
+
+<%= simple_form_for(@investment) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :amount %>
+  <%= f.submit "Submit review", class: "btn btn-primary" %>
+<% end %>
