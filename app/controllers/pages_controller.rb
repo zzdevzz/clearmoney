@@ -10,6 +10,9 @@ class PagesController < ApplicationController
   def educational_resources
   end
 
+  def show
+  end
+
   def dashboard
     user = current_user
     @goals = user.goals

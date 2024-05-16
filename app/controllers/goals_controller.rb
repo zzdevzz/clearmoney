@@ -20,6 +20,11 @@ class GoalsController < ApplicationController
     end
   end
 
+  def show
+    @item = Goal.find(params[:id])
+    render partial: "shared/show", locals: { item: @item }
+  end
+
   private
 
   def goal_params
