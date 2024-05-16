@@ -22,7 +22,8 @@ goals = [goal1, goal2, goal3]
 
 saving1 = Saving.create(name: "main", amount: 2000)
 saving2 = Saving.create(name: "emergency fund", amount: 1000)
-savings = [saving1, saving2]
+saving3 = Saving.create(name: "university", amount: 20000)
+savings = [saving1, saving2, saving3]
 
 myUser.goals = goals
 myUser.investments = invest
