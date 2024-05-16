@@ -14,8 +14,12 @@ Rails.application.routes.draw do
   get '/dashboard', to: "pages#dashboard"
   resources :pages, only: [ :education, :dashboard, :new, :show ]
   resources :goals, only: [ :new, :create, :index, :show ]
-  resources :investments, only: [ :new, :create, :index, :show ]
-  resources :debts, only: [ :new, :create, :index , :show]
+  resources :investments, only: [ :new, :create, :index, :show ] do
+    member do
+      get :chart
+    end
+  end
+  resources :debts, only: [ :new, :create, :index, :show ]
   resources :expenses, only: [ :new, :create, :index, :show ]
   resources :savings, only: [ :new, :create, :index, :show]
   resources :incomes, only: [ :new, :create, :index, :show]

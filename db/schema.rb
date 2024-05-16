@@ -30,6 +30,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_15_113233) do
     t.date "pay_by"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_debts_on_user_id"
   end
 
   create_table "expenses", force: :cascade do |t|
@@ -38,6 +39,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_15_113233) do
     t.float "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_expenses_on_user_id"
   end
 
   create_table "goals", force: :cascade do |t|
@@ -58,6 +60,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_15_113233) do
     t.float "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_incomes_on_user_id"
   end
 
   create_table "investments", force: :cascade do |t|
