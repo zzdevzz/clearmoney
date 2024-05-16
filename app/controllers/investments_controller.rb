@@ -22,8 +22,12 @@ class InvestmentsController < ApplicationController
 
   def show
     @item = Investment.find(params[:id])
+
     render partial: "shared/show", locals: { item: @item }
-    raise
+  end
+
+  def chart
+    @investment = Investment.find(params[:id])
   end
 
   private
