@@ -5,11 +5,11 @@ class PagesController < ApplicationController
   end
 
   def educational_resources
-
   end
 
   def dashboard
     user = current_user
     @goals = user.goals
+    @investments = Investment.where(user: current_user)
   end
 end

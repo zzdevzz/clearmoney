@@ -1,0 +1,25 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon col-2 card" id="navbarSupportedContent">
+  <ul class="navbar-nav me-auto flex-sm-column justify-content-between h-100">
+    <li class="nav-item active">
+      <%= link_to "User Summary", root_path, class: "nav-link btn btn-light btn-sm", data: { turbo_frame: "content" } %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "My Savings", savings_path, class: "nav-link btn btn-light btn-sm", data: { turbo_frame: "content" } %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "My Income", incomes_path, class: "nav-link btn btn-light btn-sm", data: { turbo_frame: "content" } %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "My Expenses", expenses_path, class: "nav-link btn btn-light btn-sm", data: { turbo_frame: "content" } %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "My Debts", debts_path, class: "nav-link btn btn-light btn-sm", data: { turbo_frame: "content" } %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "My Investments", investments_path, class: "nav-link btn btn-light btn-sm", data: { turbo_frame: "content" } %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "My Goals", goals_path, class: "nav-link btn btn-light btn-sm", data: { turbo_frame: "content" } %>
+    </li>
+  </ul>
+</div>
