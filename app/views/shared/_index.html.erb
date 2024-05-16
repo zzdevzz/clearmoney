@@ -4,7 +4,7 @@
     <div class="col-9">
       <div class="card">
         <h3> <%=attribute.name %> Breakdown </h3>
-        <h4> <%= attribute[0].amount + attribute[1].amount %></h4>
+        <%# <h4> <%= attribute[0].amount + attribute[1].amount %></h4> %>
         <%= pie_chart attribute.group("name").sum("amount"), donut: true %>
       </div>
       <div class="card">
