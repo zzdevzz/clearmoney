@@ -1,7 +1,7 @@
 
-<div class="container">
-  <h1 data-controller="line-chart"><%= item.name %></h1>
-  <h2> <%= item.amount  %> <h2>
+<div class="container" data-controller="line-chart">
+  <h1><%= @investment.name %></h1>
+  <h2> <%= @investment.amount  %> <h2>
   <%= link_to "Back to Dashboard", dashboard_path, class: "btn btn-warning", data: { turbo: false } %>
   <%# <%= line_chart completed_tasks_charts_path %>
 </div>
