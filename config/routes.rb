@@ -19,4 +19,6 @@ Rails.application.routes.draw do
   resources :expenses, only: [ :new, :create, :index ]
   resources :savings, only: [ :new, :create, :index]
   resources :incomes, only: [ :new, :create, :index]
+
+  
 end
