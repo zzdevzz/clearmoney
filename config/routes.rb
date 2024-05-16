@@ -12,9 +12,9 @@ Rails.application.routes.draw do
   # root "posts#index"
   get '/dashboard', to: "pages#dashboard"
   get '/educational_resources', to: "pages#educational_resources"
-  resources :pages, only: [ :education, :dashboard ]
-  resources :goals, only: [ :new, :create, :index ]
-  resources :investments, only: [ :new, :create, :index ]
+  resources :pages, only: [ :education, :dashboard, :new, :show ]
+  resources :goals, only: [ :new, :create, :index, :show ]
+  resources :investments, only: [ :new, :create, :index, :show ]
   resources :debts, only: [ :new, :create, :index ]
   resources :expenses, only: [ :new, :create, :index ]
   resources :savings, only: [ :new, :create, :index]

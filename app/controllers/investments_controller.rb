@@ -1,5 +1,4 @@
 class InvestmentsController < ApplicationController
-
   def new
     @investment = Investment.new
   end
@@ -19,6 +18,12 @@ class InvestmentsController < ApplicationController
     respond_to do |format|
       format.html { render partial: "shared/index", locals: { attribute: @investments }, layout: false }
     end
+  end
+
+  def show
+    @item = Investment.find(params[:id])
+    render partial: "shared/show", locals: { item: @item }
+    raise
   end
 
   private
