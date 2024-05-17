@@ -4,11 +4,11 @@
   </video> %>
 <section class="landing">
   <%= video_tag asset_path("accounting-video.mp4"), autoplay: true, loop: true, muted: true, class: "video" %>
-  <div class="navbar-start ml-5">
+  <div class="navbar-start d-flex align-items-center ms-5 my-3">
     <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "logo.png", size: "75x75" %>
     <% end %>
-    <h1 class="fw-bold d-inline-block">ClearMoney</h1>
+    <h1 class="fw-bold d-inline-block text-white mb-0">ClearMoney</h1>
   </div>
   <div class="content ml-5 p-5">
     <h2 class="text-uppercase fw-light fs-4">Managing Money just got easier.</h2>
@@ -51,6 +51,8 @@
       </div>
       <div id="myChart"></div>
     </div>
+    <%= link_to "Start Understanding Your Money!", dashboard_path,
+    class: "btn btn-warning d-grid gap-2 mt-5 col-3 mx-auto" %>
   </div>
 </section>
 
