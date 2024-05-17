@@ -1,9 +1,5 @@
 class ExpensesController < ApplicationController
 
-  def index
-    @expenses = Expense.where(user: current_user)
-  end
-
   def new
     @expense = Expense.new
   end
@@ -16,7 +12,6 @@ class ExpensesController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
-
   end
 
   def index
