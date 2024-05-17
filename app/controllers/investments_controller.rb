@@ -24,13 +24,16 @@ class InvestmentsController < ApplicationController
     @item = Investment.find(params[:id])
 
     render partial: "shared/show", locals: { item: @item }
-
   end
 
   def chart
     @investment = Investment.find(params[:id])
+  end
 
-
+  def destroy
+    @item = Investment.find(params[:id])
+    @item.destroy
+    redirect_to dashboard_path
   end
 
   private
