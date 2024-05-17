@@ -23,7 +23,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_17_092255) do
   end
 
   create_table "debts", force: :cascade do |t|
-    t.string "name"
+    t.string "company_name"
     t.float "amount"
     t.float "interest"
     t.string "notes"
