@@ -1,0 +1,22 @@
+$timer: 0.25s;
+.source-card{
+  border-radius: 2rem;
+  box-shadow: 0 4px 4px rgba($color: #000000, $alpha: 0.25);
+  transition: all $timer;
+
+  i{
+    font-size: 1.5rem;
+    transition: all $timer;
+  }
+
+  p, h3{
+    font-weight: 500;
+  }
+
+  &:hover {
+    box-shadow: 0 4px 4px rgba($color: gold, $alpha: 0.5);
+    i{
+      color: gold;
+    }
+  }
+}

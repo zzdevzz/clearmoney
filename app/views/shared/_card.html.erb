@@ -1,4 +1,7 @@
-<div class="card">
-  <p><%= item.name %></p>
-  <h3><%= item.amount %></h3>
+<div class="source-card card d-flex flex-row align-items-center justify-content-between p-2">
+  <div class="rounded-circle bg-light">
+    <i class="fa-solid fa-lightbulb"></i>
+  </div>
+  <p class="mb-0"><%= item.name.capitalize %></p>
+  <h3 class="mb-0 fs-6">£<%= item.amount %></h3>
 </div>
