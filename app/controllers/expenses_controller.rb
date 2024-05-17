@@ -19,6 +19,13 @@ class ExpensesController < ApplicationController
 
   end
 
+  def index
+    @expenses = Expense.where(user: current_user)
+    respond_to do |format|
+      format.html { render partial: "shared/index", locals: { attribute: @expenses }, layout: false }
+    end
+  end
+
   private
 
   def expense_params
@@ -26,9 +33,3 @@ class ExpensesController < ApplicationController
   end
 
 end
-
-
-
-
-
-
