@@ -28,6 +28,8 @@ class InvestmentsController < ApplicationController
 
   def chart
     @investment = Investment.find(params[:id])
+
+
   end
 
   def destroy

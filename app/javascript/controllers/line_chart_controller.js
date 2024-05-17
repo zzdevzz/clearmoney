@@ -4,36 +4,54 @@ Chart.register(...registerables);
 
 // Connects to data-controller="line-chart"
 export default class extends Controller {
+  static targets = ["stock"]
+
+  // canvasContext() {
+  //   return this.myChartTarget.getContext('2d');
+  // }
   connect() {
-    console.log("hello");
+    let STOCKS = []
+
     const url = "https://www.alphavantage.co/query?function=TIME_SERIES_WEEKLY&symbol=IBM&apikey=demo";
 
-  //   var request = require('request');
-
-  //   request.get({
-  //     url: url,
-  //     json: true,
-  //     headers: {'User-Agent': 'request'}
-  //   }, (err, res, data) => {
-  //     if (err) {
-  //       console.log('Error:', err);
-  //     } else if (res.statusCode !== 200) {
-  //       console.log('Status:', res.statusCode);
-  //     } else {
-  //       // data is successfully parsed as a JSON object:
-  //       console.log(data);
-  //     }
-  // });
     fetch(url, {
       json: true,
       headers: { "Accept": 'application/json'}
     })
     .then(response => response.json())
     .then((data) => {
-      console.log(data)
+      const weeks = Object.entries(data["Weekly Time Series"]).slice(0, 5)
+      weeks.forEach((week) => {
+        const close = week["1"]["4. close"]
+        STOCKS.push(Number(close))
+      })
+
+      const chart = document.getElementById("chart")
+
+      new Chart(chart, {
+        type: 'line',
+        data: {
+          labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+          datasets: [{
+            label: '# of Votes',
+            data: STOCKS,
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
     });
+
   }
+
 }
+
 
 
 // "2024-03-28": {

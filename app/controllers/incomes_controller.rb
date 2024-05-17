@@ -31,7 +31,7 @@ class IncomesController < ApplicationController
   end
 
   def destroy
-    @item = incomes.find(params[:id])
+    @item = Income.find(params[:id])
     @item.destroy
     redirect_to dashboard_path
   end
