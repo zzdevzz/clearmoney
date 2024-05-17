@@ -14,13 +14,13 @@
 
   </head>
 
-  <body>
+  <body class="vh-100">
     <%= render "shared/navbar" %>
     <%= render "shared/flashes" %>
     <% if controller_name == 'pages' && action_name == 'home' %>
       <%= yield %>
     <% else %>
-      <div class="container mt-5 min-height">
+      <div class="container">
         <%= yield %>
       </div>
     <% end %>

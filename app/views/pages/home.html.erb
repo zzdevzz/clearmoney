@@ -40,6 +40,23 @@
     </div>
   </div>
 </section>
-<section class="min-vh-100 container bg-light">
-  <h4>Try it yourself.</h4>
+<section class="min-vh-100 container bg-light d-flex align-items-center">
+  <div class="w-100">
+    <h4 class="text-center fs-1 fw-bold mb-5">Try it yourself.</h4>
+    <div class="d-flex justify-content-around align-items-center">
+      <div class="slidecontainer d-flex flex-column w-50" data-controller="slider">
+        <input type="range" min="1" max="100" value="50" class="slider" id="myRange1" data-action="input->slider#updateChart" data-slider-target="input1">
+        <input type="range" min="1" max="100" value="50" class="slider" id="myRange2" data-action="input->slider#updateChart" data-slider-target="input2">
+        <input type="range" min="1" max="100" value="50" class="slider" id="myRange3" data-action="input->slider#updateChart" data-slider-target="input3">
+      </div>
+      <div id="myChart"></div>
+    </div>
+  </div>
 </section>
+
+<%# <section class="min-vh-100 container bg-light">
+  <h4>Chart Test 02</h4>
+  <div data-controller="slider">
+    <div id="myChart" data-slider-target="chart"></div>
+  </div>
+</section> %>
