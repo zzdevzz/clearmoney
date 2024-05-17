@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 data-controller="line-chart"><%= item.name.titleize %></h1>
+  <h1 data-controller="line-chart"><%= item.name %></h1>
   <h2> <%= item.amount %></h2>
   <%= link_to "Back to Dashboard", dashboard_path, class: "btn btn-warning", data: { turbo: false } %>
   <%= button_to "Delete Item", url_for(controller: controller_path, action: 'destroy'), class: "btn btn-warning", method: :delete, data: {turbo_confirm: 'Are you sure?'} %>
