@@ -1,4 +1,5 @@
 import { Application } from "@hotwired/stimulus"
+// import Chart from 'chart.js/auto';
 
 const application = Application.start()
 

@@ -20,6 +20,13 @@ class DebtsController < ApplicationController
 
   end
 
+  def index
+    @debts = Debt.where(user: current_user)
+    respond_to do |format|
+      format.html { render partial: "shared/index", locals: { attribute: @debts }, layout: false }
+    end
+  end
+
   private
 
   def debt_params

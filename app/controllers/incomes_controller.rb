@@ -19,6 +19,13 @@ class IncomesController < ApplicationController
 
   end
 
+  def index
+    @incomes = Income.where(user: current_user)
+    respond_to do |format|
+      format.html { render partial: "shared/index", locals: { attribute: @incomes }, layout: false }
+    end
+  end
+
   private
 
   def income_params
