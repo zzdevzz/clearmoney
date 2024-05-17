@@ -1,4 +1,5 @@
 class FinanceCalculationsService
+  # just for git commit
 
   def call(income = nil, salary = nil)
     return {tax: calculate_tax(income), ni: calculate_national_insurance(salary)}
