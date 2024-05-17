@@ -13,6 +13,10 @@ Rails.application.routes.draw do
   resources :articles, only: [:index]
   get '/dashboard', to: "pages#dashboard"
   resources :pages, only: [ :education, :dashboard, :new, :show ]
+  namespace :dashboard do
+    root to: 'pages#dashboard'
+    get 'investments', to: 'investments#index', as: :dashboard_investments
+  end
   resources :goals, only: [ :new, :create, :index, :show ]
   resources :investments, only: [ :new, :create, :index, :show ] do
     member do
