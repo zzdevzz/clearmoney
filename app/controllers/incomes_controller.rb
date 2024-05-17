@@ -32,5 +32,6 @@ class IncomesController < ApplicationController
     params.require(:income).permit(:name, :amount)
   end
 
+  FinanceCalculationsService.new.call()
 
 end
