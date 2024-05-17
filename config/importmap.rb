@@ -9,3 +9,5 @@ pin "bootstrap", to: "bootstrap.min.js", preload: true
 pin "@popperjs/core", to: "popper.js", preload: true
 pin "chartkick", to: "chartkick.js"
 pin "Chart.bundle", to: "Chart.bundle.js"
+pin "chart.js", to: "https://cdn.jsdelivr.net/npm/chart.js@latest/dist/chart.min.js"
+pin "@kurkle/color", to: "https://cdn.jsdelivr.net/npm/@kurkle/color@latest/dist/color.esm.js"
