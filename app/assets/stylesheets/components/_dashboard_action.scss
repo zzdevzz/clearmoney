@@ -1,0 +1,20 @@
+.dashboard-action {
+  ul {
+    margin: 0;
+
+    li {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      i {
+        font-size: 1rem;
+      }
+
+      h3{
+        font-size: 1rem;
+      }
+    }
+  }
+}
