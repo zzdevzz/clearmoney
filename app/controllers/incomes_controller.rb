@@ -1,8 +1,8 @@
 class IncomesController < ApplicationController
   def index
-    @incomes = Income.where(user: current_user)
+    @item = Income.where(user: current_user)
     respond_to do |format|
-      format.html { render partial: "shared/index", locals: { attribute: @incomes }, layout: false }
+      format.html { render partial: "shared/index", locals: { attribute: @item }, layout: false }
     end
   end
 

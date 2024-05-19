@@ -1,5 +1,5 @@
 class FinanceCalculationsService
-  def call(income = nil, salary = nil)
+  def call(income = 0, salary = 0)
     income_tax = calculate_tax(income)
     national_insurance = calculate_national_insurance(salary)
     student_loan = calculate_student_loan_repayment(income)
