@@ -1,2 +1,17 @@
-<h1> <%= @item %></h1>
-all works!
+<% @item.each do |attr| %>
+  <% attr.each do |item| %>
+    <%= item.name %>
+  <% end %>
+<% end %>
+
+<% income = @incomes.sum(&:amount) %>
+<h3><%= income %></h3>
+<h3><%= FinanceCalculationsService.new.call(income,income) %></h3>
+
+<% totals = {} %>
+
+<% @item.each do |attribute| %>
+  <% totals[attribute.name] = attribute.sum(:amount) %>
+<% end %>
+
+<%= pie_chart totals, donut: true %>
