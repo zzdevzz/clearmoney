@@ -3,5 +3,5 @@
     <i class="fa-solid fa-lightbulb"></i>
   </div>
   <p class="mb-0"><%= item.name %></p>
-  <h3 class="mb-0 fs-6">£<%= item.amount %></h3>
+  <h3 class="mb-0 fs-6"><%= number_to_currency(item.amount , unit: "£")%></h3>
 </div>
