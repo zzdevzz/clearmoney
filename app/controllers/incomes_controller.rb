@@ -1,8 +1,4 @@
 class IncomesController < ApplicationController
-
-  # def index
-  #   @incomes = Income.where(user: current_user)
-  # end
   def index
     @incomes = Income.where(user: current_user)
     respond_to do |format|
