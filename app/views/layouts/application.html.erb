@@ -14,14 +14,14 @@
 
   </head>
 
-  <body class="">
+  <body class="colour-frame">
     <% if controller_name == 'pages' && action_name == 'home' %>
       <div>
         <%= render "shared/flashes" %>
         <%= yield %>
       </div>
     <% else %>
-      <div class="colour-frame">
+      <div class="vh-100">
         <%= render "shared/navbar" %>
         <%= render "shared/flashes" %>
         <div class="container">

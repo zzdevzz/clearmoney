@@ -1,9 +1,11 @@
+$footer-height: 50px;
+
 .footer {
   background: rgba(36, 121, 224, 0.992);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100px;
+  height: $footer-height;
   padding: 0px 50px;
   color: rgba(245, 247, 249, 0.986);
 }

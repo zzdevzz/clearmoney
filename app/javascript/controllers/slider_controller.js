@@ -13,6 +13,14 @@ export default class extends Controller {
       "Value 1": parseInt(this.input1Target.value),
       "Value 2": parseInt(this.input2Target.value),
       "Value 3": parseInt(this.input3Target.value)
-    }, {donut: true});
-  }
-}
+    }, {
+      donut: true,
+      library: {
+          legend: {
+              labels: {
+                  color: 'white'       // Needed depending on the version of Chart.js
+              }
+          }
+      }
+    });
+}}
