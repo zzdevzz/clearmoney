@@ -5,11 +5,11 @@ class FetchCalculationsSerivce
   base_uri 'https://api.coingecko.com/api/v3'
 
   def current_price(name)
-    puts response = self.class.get("/simple/price", query: { ids: name, vs_currencies: "gbp" })
+    self.class.get("/simple/price", query: { ids: name, vs_currencies: "gbp" })
   end
 
   def price_history(name)
-    puts response = self.class.get("/coins/#{name}/market_chart", query: {vs_currency: "gbp", days: 90, interval: "daily"})
+    self.class.get("/coins/#{name}/market_chart", query: {vs_currency: "gbp", days: 90, interval: "daily"})
   end
 end
 
