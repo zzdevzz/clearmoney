@@ -55,6 +55,7 @@ gem "chartkick"
 gem "groupdate"
 gem 'chart-js-rails'
 gem 'httparty'
+gem 'whenever'
 
 group :development, :test do
   gem "dotenv-rails"
