@@ -16,5 +16,13 @@
   width: 40px;
   border-radius: 0px;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-  border: white 1px solid;
+  border: rgb(255, 255, 255) 1px solid;
+}
+
+.avatar-link {
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: fit-content;
+  height: fit-content;
 }

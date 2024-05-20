@@ -17,32 +17,22 @@
 <div class="row">
 <% @articles.each_with_index do |article, index| %>
   <% photo_url = image_path "https://source.unsplash.com/random/?#{index},finance" %>
-  <div class="col-lg-3 col-md-6 col-12">
-  <div class="flip-card mt-5">
-    <div class="flip-card-inner">
-      <div class="flip-card-front">
-        <%= image_tag photo_url, style: "width: 100%; height: 60%" %>
-        <%# <img src="https://thumbor.forbes.com/thumbor/fit-in/1290x/https://www.forbes.com/advisor/wp-content/uploads/2022/07/finance.jpeg.jpg", style= "width: 100%; height: 60%" > %>
-        <div class="p-3 text-content mb-3">
+  <a href="<%=article.url%>" class="col-lg-4 col-md-6 col-12" target="_blank">
+    <div class="flip-card mt-5">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <%= image_tag photo_url, style: "width: 100%; height: 55%" %>
+          <div class="p-3 text-content mb-3">
+            <h2><%= article.title %></h2>
+            <p><strong><%= article.description %></strong></p>
+          </div>
+        </div>
+        <div class="flip-card-back p-4 text-content">
           <h2><%= article.title %></h2>
-          <p><strong><%= article.description %></strong></p>
+          <p><%= article.description %></p>
         </div>
       </div>
-      <div class="flip-card-back p-4 text-content">
-        <h2><%= article.title %></h2>
-        <a class="external-link" href=<%=article.url%>><strong>click to view article</strong></a>
-        <p><%= article.description %></p>
-      </div>
     </div>
-  </div>
-  </div>
+  </a>
 <% end %>
 <div>
-
-      <div class="p-3 text-content mb-3">
-
-<%# <div class="container">
-  <div class="card-container mt-5 row">
-    <% @articles.each do |article| %>
-      <%# <%= link_to(article_path(article), class: "col-lg-3 col-md-6 col-12") do %>
-        <%# <%= render "/shared/article_card", article: article %>
