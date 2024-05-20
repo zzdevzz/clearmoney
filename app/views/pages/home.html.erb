@@ -10,15 +10,15 @@
     <% end %>
     <h1 class="fw-bold d-inline-block text-white mb-0">ClearMoney</h1>
   </div>
-  <div class="content ml-5 p-5">
-    <h2 class="text-uppercase fw-light fs-4">Managing Money just got easier.</h2>
-    <h3 class="text-capitalize fw-bold strip">Ready to learn about your money? </h3>
+  <div class="content credit-card ml-5 p-5">
+    <h2 class="text-uppercase fw-light fs-5">Managing Money just got easier.</h2>
+    <h3 class="text-capitalize fw-bold strip fs-4">Ready to learn about your money? </h3>
     <p>“You can’t improve what you don’t measure”.
-        We make it easy for you to understand how your money is broken down. no need to be a whiz kid with the numbers. everything is visualized so its easy for you to understand, your money. clearly. </p>
+        No need to be a whiz kid with the numbers. We make it easy for you to understand your money. Everything is visualized so you can see your money. clearly. </p>
     <%= link_to "Get Started", dashboard_path, class: "btn btn-warning" %>
   </div>
 </section>
-<section class="content-info ">
+<section class="content-info bg-light">
   <div class="w-100 container min-vh-100 d-flex align-items-center" >
     <div class=" w-100 container">
       <h2 class="text-center fs-1 fw-bold mb-5">What we believe in</h2>
@@ -42,7 +42,8 @@
     </div>
   </div>
 </section>
-<section class="min-vh-100 bg-light d-flex align-items-center">
+<svg class="bg-light" id="wave" style="transform:rotate(0deg); transition: 0.3s" viewBox="0 0 1440 240" version="1.1" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0"><stop stop-color="rgba(0, 89, 127, 1)" offset="0%"></stop><stop stop-color="rgba(0, 89, 127, 0.67)" offset="100%"></stop></linearGradient></defs><path style="transform:translate(0, 1px); opacity:1" fill="url(#sw-gradient-0)" d="M0,96L34.3,112C68.6,128,137,160,206,160C274.3,160,343,128,411,100C480,72,549,48,617,56C685.7,64,754,104,823,132C891.4,160,960,176,1029,164C1097.1,152,1166,112,1234,96C1302.9,80,1371,88,1440,108C1508.6,128,1577,160,1646,164C1714.3,168,1783,144,1851,148C1920,152,1989,184,2057,188C2125.7,192,2194,168,2263,168C2331.4,168,2400,192,2469,180C2537.1,168,2606,120,2674,84C2742.9,48,2811,24,2880,16C2948.6,8,3017,16,3086,36C3154.3,56,3223,88,3291,96C3360,104,3429,88,3497,68C3565.7,48,3634,24,3703,28C3771.4,32,3840,64,3909,96C3977.1,128,4046,160,4114,156C4182.9,152,4251,112,4320,116C4388.6,120,4457,168,4526,188C4594.3,208,4663,200,4731,172C4800,144,4869,96,4903,72L4937.1,48L4937.1,240L4902.9,240C4868.6,240,4800,240,4731,240C4662.9,240,4594,240,4526,240C4457.1,240,4389,240,4320,240C4251.4,240,4183,240,4114,240C4045.7,240,3977,240,3909,240C3840,240,3771,240,3703,240C3634.3,240,3566,240,3497,240C3428.6,240,3360,240,3291,240C3222.9,240,3154,240,3086,240C3017.1,240,2949,240,2880,240C2811.4,240,2743,240,2674,240C2605.7,240,2537,240,2469,240C2400,240,2331,240,2263,240C2194.3,240,2126,240,2057,240C1988.6,240,1920,240,1851,240C1782.9,240,1714,240,1646,240C1577.1,240,1509,240,1440,240C1371.4,240,1303,240,1234,240C1165.7,240,1097,240,1029,240C960,240,891,240,823,240C754.3,240,686,240,617,240C548.6,240,480,240,411,240C342.9,240,274,240,206,240C137.1,240,69,240,34,240L0,240Z"></path></svg>
+<section class="min-vh-100 d-flex align-items-center colour-frame">
   <div class="w-100 container">
     <h4 class="text-center fs-1 fw-bold mb-5">Try it yourself.</h4>
     <div class="d-flex justify-content-around align-items-center">
@@ -52,7 +53,6 @@
         <input type="range" min="1" max="100" value="50" class="slider" id="myRange3" data-action="input->slider#updateChart" data-slider-target="input3">
       </div>
       <div id="myChart"></div>
-
     </div>
     <%= link_to "Start Understanding Your Money!", dashboard_path,
     class: "btn btn-warning d-grid gap-2 mt-5 col-3 mx-auto" %>
