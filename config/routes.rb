@@ -12,7 +12,8 @@ Rails.application.routes.draw do
 
   resources :articles, only: [:index]
   get '/dashboard', to: "pages#dashboard"
-  resources :pages, only: [ :education, :dashboard, :new, :show ]
+  get '/about_us', to: "pages#about_us"
+  resources :pages, only: [ :dashboard, :new, :show ]
   namespace :dashboard do
     root to: 'pages#dashboard'
     get 'investments', to: 'investments#index', as: :dashboard_investments

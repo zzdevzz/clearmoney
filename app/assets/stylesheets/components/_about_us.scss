@@ -1,0 +1,39 @@
+.container {
+  background-color: #7590c92b;
+  display: flex ;
+  justify-content: space-between;
+  height: 70%;
+
+
+}
+
+  .write-up p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #020202ea;
+  }
+  .team {
+    display: flex;
+    justify-content: space-around;
+    // flex-wrap: wrap;
+    // padding: 20px;
+  }
+  .team-member {
+    background: #5f4e655c;
+    width: 100%;
+    margin: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 40px;
+    // width: 30%;
+  }
+
+  .photo {
+    width: 98px;
+    height: 100px;
+  }
+  // @media (max-width: 600px) {
+  //   .team-member {
+  //     width: 100%;
+  //   }
+  // }
