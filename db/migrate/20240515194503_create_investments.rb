@@ -4,11 +4,11 @@ class CreateInvestments < ActiveRecord::Migration[7.1]
       t.string :name
       t.float :buy_price
       t.date :buy_date
-      t.float :current_price
+      t.float :quantity
       t.float :amount
-      t.integer :quantity
+      t.float :price_current
+      t.jsonb :price_history, default: {}
       t.references :user, null: false, foreign_key: true
-
       t.timestamps
     end
   end

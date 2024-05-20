@@ -1,7 +1,7 @@
 <div class="container">
   <h1 class="text-uppercase" data-controller="line-chart"><%= item.name %></h1>
   <h2> Price bought for: <%= item.amount %></h2>
-  <h3>Current price: </h3>
+  <h3>Current price: <%= item.price_current %></h3>
   <%= link_to "Back to Dashboard", dashboard_path, class: "btn btn-warning", data: { turbo: false } %>
   <%= button_to "Delete Item", url_for(controller: controller_path, action: 'destroy'), class: "btn btn-warning", method: :delete, data: {turbo_confirm: 'Are you sure?'} %>
 </div>
