@@ -1,7 +1,7 @@
 class Investment < ApplicationRecord
   belongs_to :user
 
-  before_create :set_info, :calculate_amount
+  before_create :set_info_current, :calculate_amount, :set_info_history
   before_save :calculate_amount
 
   def calculate_amount
@@ -12,8 +12,11 @@ class Investment < ApplicationRecord
     end
   end
 
-  def set_info
-    p self.price_current = FetchCurrentPriceService.new.price_current(self.name)
-    # p self.price_history = FetchCurrentPriceService.new.price_history(self.name)
+  def set_info_current
+    self.price_current = FetchCurrentPriceService.new.price_current(self.name)
+  end
+
+  def set_info_history
+    self.price_history = FetchCurrentPriceService.new.price_history(self.name)
   end
 end

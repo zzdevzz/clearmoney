@@ -68,7 +68,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_17_092255) do
     t.string "name"
     t.float "buy_price"
     t.date "buy_date"
-    t.integer "quantity"
+    t.float "quantity"
     t.float "amount"
     t.float "price_current"
     t.jsonb "price_history", default: {}

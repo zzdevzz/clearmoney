@@ -19,10 +19,10 @@
 
 # Learn more: http://github.com/javan/whenever
 
-every 15.minutes do
+every 3.minutes do
   runner "UpdatePricesCurrentJob.perform_later", output: 'log/update_prices_current_job.log'
 end
 
-every 1.day do
+every 1.day, at: '12:00am' do
   runner "UpdatePricesHistoryJob.perform_later", output: 'log/update_prices_history_job.log'
 end
