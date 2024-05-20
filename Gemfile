@@ -56,7 +56,10 @@ gem "chartkick"
 gem "groupdate"
 gem 'chart-js-rails'
 gem 'httparty'
-gem 'whenever'
+gem 'whenever', require: false
+gem "sidekiq", "~> 7"
+gem "sidekiq-failures"
+gem 'sidekiq-scheduler'
 
 group :development, :test do
   gem "dotenv-rails"

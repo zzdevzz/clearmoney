@@ -8,3 +8,22 @@
 @import "footer";
 @import "dashboard_action";
 @import "card_container";
+@import "home_credit_card";
+@import "layout";
+
+html {
+  height: 100%;
+}
+body.colour-frame {
+  background-attachment: fixed;
+  background-size: cover; /* Ensures the background covers the entire element */
+}
+
+.colour-frame{
+  background: rgb(5,29,53);
+  background: linear-gradient(0deg, rgba(5,29,53,1) 10%, rgba(0,89,127,1) 100%);
+}
+
+.bb{
+  box-sizing: border-box;
+}

@@ -22,7 +22,7 @@ class GoalsController < ApplicationController
 
   def show
     @item = Goal.find(params[:id])
-    render partial: "shared/show", locals: { item: @item }
+    render partial: "shared/show", locals: { item: @item }, layout: false
   end
 
   def destroy
