@@ -55,6 +55,7 @@ gem "sassc-rails"
 gem "chartkick"
 gem "groupdate"
 gem 'chart-js-rails'
+gem 'httparty'
 
 group :development, :test do
   gem "dotenv-rails"

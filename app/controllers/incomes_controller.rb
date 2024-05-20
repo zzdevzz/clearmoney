@@ -8,7 +8,6 @@ class IncomesController < ApplicationController
 
   def show
     @item = Income.find(params[:id])
-
     render partial: "shared/show", locals: { item: @item }
   end
 
