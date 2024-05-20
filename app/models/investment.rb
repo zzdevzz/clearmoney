@@ -1,6 +1,10 @@
 class Investment < ApplicationRecord
   belongs_to :user
-
+  validates :name, presence: true
+  validates :but_price, presence: true
+  validates :quantity, presence: true
+  validates :amount, presence: true
+  validates :buy_date, presence: true
   # def amount
   #   self.quantity
   # end
