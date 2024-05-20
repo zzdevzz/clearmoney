@@ -1,7 +1,7 @@
 <div id="main_layout">
   <div class = "container">
     <div class="row">
-      <%= render "shared/dashboard_actions_new" %>
+      <%= render "shared/dashboard_actions" %>
       <turbo-frame id="content" class="col-10">
         <%= render "shared/index", attribute: @investments %>
         <!-- Initial content or a spinner/loader can go here -->

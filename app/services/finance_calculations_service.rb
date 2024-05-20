@@ -1,8 +1,17 @@
 class FinanceCalculationsService
-  # just for git commit
+  def call(income = 0, salary = 0)
+    income_tax = calculate_tax(income)
+    national_insurance = calculate_national_insurance(salary)
+    student_loan = calculate_student_loan_repayment(income)
 
-  def call(income = nil, salary = nil)
-    return {tax: calculate_tax(income), ni: calculate_national_insurance(salary)}
+    disposable_income = income - (income_tax + national_insurance + student_loan)
+
+    return {
+      income_tax: income_tax,
+      national_insurance: national_insurance,
+      student_loan: student_loan,
+      disposable_income: disposable_income
+    }
   end
 
   def calculate_tax(income)
@@ -58,5 +67,19 @@ class FinanceCalculationsService
     end
 
     ni
+  end
+
+  def calculate_student_loan_repayment(income)
+    return 0 if income.nil?
+    # Define tax brackets and rates
+    payment_threshold = 27295
+    tax_basic = 0.09
+    # Calculate tax based on income
+    if income <= payment_threshold
+      studentloan = 0
+    else
+      studentloan = (income - payment_threshold) * tax_basic
+    end
+    studentloan
   end
 end

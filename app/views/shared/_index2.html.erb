@@ -1,0 +1,28 @@
+<% totals = {} %>
+
+<% @item.each do |attribute| %>
+  <% totals[attribute.name] = attribute.sum(:amount) %>
+<% end %>
+
+<turbo-frame id="content">
+  <div class="row vh-100">
+    <div class="col-9">
+      <div class="card p-4">
+        <h3> <%=@user.username %> Breakdown </h3>
+        <h4> Total: <%= number_to_currency(totals.values.sum , unit: "£") %></h4>
+        <%= pie_chart totals, donut: true, legend: "left" %>
+      </div>
+      <div class="card p-4">
+        <h3> <%=@user.username %> TBD </h3>
+      </div>
+    </div>
+    <div class="card-container row g-3 w-25 p-3 card col mt-0 d-block overflow-auto">
+      <h3> Sources </h3>
+      <% totals.each do |item| %>
+        <%= link_to "", class: "col-12 text-decoration-none", data: { turbo: false } do %>
+          <%= render "/shared/card_user", item: item %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</turbo-frame>

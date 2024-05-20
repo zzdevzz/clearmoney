@@ -1,6 +1,11 @@
 // Import page-specific CSS files here.
 @import "home";
+@import "all";
 
 body {
   font-family: "Montserrat", sans-serif;
+}
+
+.vh-fit {
+  height: calc(100vh - .5rem - 50px);
 }

@@ -7,7 +7,7 @@ class InvestmentsController < ApplicationController
     @investment = Investment.new(investment_params)
     @investment.user = current_user
     if @investment.save
-      redirect_to pages_path()
+      redirect_to dashboard_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -22,14 +22,11 @@ class InvestmentsController < ApplicationController
 
   def show
     @item = Investment.find(params[:id])
-
     render partial: "shared/show", locals: { item: @item }
   end
 
   def chart
     @investment = Investment.find(params[:id])
-
-
   end
 
   def destroy
@@ -41,6 +38,6 @@ class InvestmentsController < ApplicationController
   private
 
   def investment_params
-    params.require(:investment).permit(:title, :amount)
+    params.require(:investment).permit(:name, :quantity, :buy_price)
   end
 end
