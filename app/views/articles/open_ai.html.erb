@@ -1,0 +1,5 @@
+<%= @response["choices"][0]["message"]["content"] %>
+<form action="/open_ai" method="get">
+  <input type="text" name="input" placeholder="write here">
+  <input type="submit">
+</form>
