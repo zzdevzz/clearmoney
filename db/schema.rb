@@ -23,7 +23,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_17_092255) do
   end
 
   create_table "debts", force: :cascade do |t|
-    t.string "company_name"
+    t.string "name"
     t.float "amount"
     t.float "interest"
     t.string "notes"
@@ -67,9 +67,11 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_17_092255) do
   create_table "investments", force: :cascade do |t|
     t.string "name"
     t.float "buy_price"
-    t.integer "quantity"
-    t.float "amount"
     t.date "buy_date"
+    t.float "quantity"
+    t.float "amount"
+    t.float "price_current"
+    t.jsonb "price_history", default: {}
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
