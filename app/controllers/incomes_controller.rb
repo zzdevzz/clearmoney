@@ -31,7 +31,6 @@ class IncomesController < ApplicationController
     redirect_to dashboard_path
   end
 
-
   private
 
   def income_params

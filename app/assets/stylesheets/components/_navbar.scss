@@ -2,8 +2,9 @@ $navbar-height: 50px;
 
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
-  // height: $navbar-height;
+  background: #22405D;
+  box-shadow: 0 6px 4px rgba($color: #000000, $alpha: 0.25);
+  color: whitesmoke;
 }
 
 .navbar-lewagon .navbar-collapse {

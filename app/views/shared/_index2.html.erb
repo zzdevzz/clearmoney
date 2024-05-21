@@ -18,7 +18,7 @@
       <div class="card p-4 h-100">
         <h3> <%=@user.username.titleize %> Breakdown </h3>
         <h4> Total: <%= number_to_currency(fixed.values.sum , unit: "£") %></h4>
-        <%= column_chart yearly, height: "200px", prefix: "£", colors: [greencolour, redcolour], %>
+        <%= column_chart yearly, height: "200px", prefix: "£", colors: [greencolour, redcolour] %>
         <%= column_chart fixed, height: "150px", prefix: "£", colors: [greencolour, redcolour, greencolour, greencolour] %>
       </div>
     </div>

@@ -6,12 +6,10 @@
     <div class="">
       <%= line_chart item.price_history,
       curve: false, points: false, prefix: "£",
-      min: (item.price_history.values.min),
-      max: item.price_history.values.max,
+      min: (item.price_history.values.min.round),
+      max: item.price_history.values.max.round,
+      colors: ["rgba(249, 180, 45, 1)"],
       library: {
-         layout: {
-            padding: 20
-        },
         scales: {
           x: {
             ticks: {
@@ -19,7 +17,7 @@
               # // Changes the x-axis tick labels to white
             },
             grid: {
-              color: "rgba(255, 255, 255, 0.1)"
+               color: "rgba(255, 255, 255, 1)"
               # // Changes the x-axis grid lines to a lighter white
             }
           },
@@ -29,7 +27,7 @@
               # // Changes the y-axis tick labels to white
             },
             grid: {
-              color: "rgba(255, 255, 255, 0.1)"
+              color: "rgba(255, 255, 255, .5)"
               # // Changes the y-axis grid lines to a lighter white
             }
           }
@@ -58,5 +56,3 @@
   <%= link_to "Back to Dashboard", dashboard_path, class: "btn btn-warning", data: { turbo: false } %>
   <%= button_to "Delete Item", url_for(controller: controller_path, action: 'destroy'), class: "btn btn-warning", method: :delete, data: {turbo_confirm: 'Are you sure?'} %>
 </div>
-
-<%# , library: { scales: {yAxes: [ticks: {fontColor: "#ffffff",}]}} %>
