@@ -6,7 +6,7 @@
 @import "flip_card";
 @import "source_card";
 @import "footer";
-@import "dashboard_action";
+@import "dashboard_actions";
 @import "about_us";
 @import "card_container";
 @import "home_credit_card";
@@ -15,14 +15,13 @@
 html {
   height: 100%;
 }
-body.colour-frame {
-  background-attachment: fixed;
-  background-size: cover; /* Ensures the background covers the entire element */
-}
 
-.colour-frame{
+.color-frame {
+  width: 100%;
+  height: fit-content;
   background: rgb(5,29,53);
-  background: linear-gradient(0deg, rgba(5,29,53,1) 10%, rgba(0,89,127,1) 100%);
+  background-image: linear-gradient(0deg, rgba(5,29,53,1) 10%, rgba(0,89,127,1) 100%);
+  background-size: 100% 100%;
 }
 
 .bb{
