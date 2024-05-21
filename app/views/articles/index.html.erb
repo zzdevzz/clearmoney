@@ -2,7 +2,7 @@
 
 
 <div class="row justify-content-center" >
-  <div class="col-sm-8 my-3">
+  <div class="col-sm-8 my-3 d-flex flex-column">
     <%= form_with url: articles_path, method: :get, class: "d-flex" do %>
       <%= text_field_tag :query,
             params[:query],
@@ -11,17 +11,11 @@
         %>
       <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
     <% end %>
+    <button class="btn btn-primary align-self-end mt-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">AI chatbot</button>
   </div>
 </div>
 
-<%# <form action="/open_ai" method="get">
-  <input type="text" name="input" placeholder="write here">
-  <input type="submit">
-</form> %>
-
-<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">AI chatbot</button>
-
-<div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+<div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
   <div class="offcanvas-header">
     <h5 class="offcanvas-title" id="offcanvasScrollingLabel">AI:chat to me</h5>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
