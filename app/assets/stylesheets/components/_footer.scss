@@ -1,5 +1,9 @@
 $footer-height: 50px;
 
+.sticky-footer {
+  min-height: calc(100vh - 50px);
+}
+
 .footer {
   background: rgba(36, 121, 224, 0.992);
   display: flex;
