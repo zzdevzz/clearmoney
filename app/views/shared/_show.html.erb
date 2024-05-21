@@ -1,8 +1,58 @@
-<div class="container">
-  <h1 class="text-uppercase" data-controller="line-chart"><%= item.name %></h1>
-  <h2> Price bought for: <%= item.amount %></h2>
-  <h3>Current price: <%= item.price_current %> </h3>
-  <%= line_chart item.price_history, curve: false, points: false, prefix: "£", min: (item.price_history.values.min), max: item.price_history.values.max %>
+<div class="container text-white">
+  <h1 class="" data-controller="line-chart"><%= item.name.titleize %></h1>
+  <% if controller_name == "investments" %>
+    <h2> Price bought for: <%= item.amount %></h2>
+    <h3>Current price: <%= item.price_current %> </h3>
+    <div class="">
+      <%= line_chart item.price_history,
+      curve: false, points: false, prefix: "£",
+      min: (item.price_history.values.min.round),
+      max: item.price_history.values.max.round,
+      colors: ["rgba(249, 180, 45, 1)"],
+      library: {
+        scales: {
+          x: {
+            ticks: {
+              color: "white"
+              # // Changes the x-axis tick labels to white
+            },
+            grid: {
+               color: "rgba(255, 255, 255, 1)"
+              # // Changes the x-axis grid lines to a lighter white
+            }
+          },
+          y: {
+            ticks: {
+              color: "white"
+              # // Changes the y-axis tick labels to white
+            },
+            grid: {
+              color: "rgba(255, 255, 255, .5)"
+              # // Changes the y-axis grid lines to a lighter white
+            }
+          }
+        },
+        plugins: {
+          legend: {
+            labels: {
+              color: "white"
+              # // Optional: Changes the legend labels to white if you have a legend
+            }
+          },
+          tooltip: {
+            enabled: true,
+            bodyColor: "white",
+            # // Optional: Changes the tooltip text color to white
+            titleColor: "white"
+            # / Optional: Changes the tooltip title color to white
+          }
+        }
+      }
+      %>
+    </div>
+  <% else %>
+    <h2> Price bought for: <%= item.amount %></h2>
+  <% end %>
   <%= link_to "Back to Dashboard", dashboard_path, class: "btn btn-warning", data: { turbo: false } %>
   <%= button_to "Delete Item", url_for(controller: controller_path, action: 'destroy'), class: "btn btn-warning", method: :delete, data: {turbo_confirm: 'Are you sure?'} %>
 </div>

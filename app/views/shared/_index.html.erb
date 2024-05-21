@@ -7,13 +7,16 @@
             <h3> <%=attribute.name %> Breakdown </h3>
             <h4> Total: <%= number_to_currency(attribute.sum(&:amount) , unit: "£") %></h4>
           </div>
-          <label class="switch align-self-center">
-            <input type="checkbox">
-            <span class="slider round"></span>
-          </label>
+          <% if controller_name == "incomes" %>
+            <label class="switch align-self-center">
+              <input type="checkbox">
+              <span class="slider round"></span>
+            </label>
+          <% end %>
         </div>
         <div class="d-flex justify-content-center align-items-center flex-grow-1"> <!-- Flex container for centering the chart -->
-          <%= pie_chart attribute.group("name").sum("amount"), donut: true, legend: "left" %>
+          <%= pie_chart attribute.group("name").sum("amount"), donut: true, legend: "left"%>
+
         </div>
       </div>
     </div>

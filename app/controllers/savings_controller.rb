@@ -9,8 +9,7 @@ class SavingsController < ApplicationController
 
   def show
     @item = Saving.find(params[:id])
-
-    render partial: "shared/show", locals: { item: @item }
+    render "shared/_show", locals: { item: @item }
   end
 
   def destroy

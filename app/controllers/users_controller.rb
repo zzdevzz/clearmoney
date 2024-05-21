@@ -13,9 +13,11 @@ class UsersController < ApplicationController
     @investments = @user.investments
     @goals = @user.goals
     @item = [@incomes, @savings, @expenses, @debts, @investments, @goals]
+    @yearly = [@incomes, @expenses]
+    @fixed = [@savings, @debts, @investments, @goals]
 
     respond_to do |format|
-      format.html { render partial: "shared/index2", locals: { attribute: @item }, layout: false }
+      format.html { render partial: "shared/index2", locals: { attribute: @user }, layout: false }
     end
   end
 

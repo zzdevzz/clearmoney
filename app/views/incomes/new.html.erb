@@ -1,6 +1,5 @@
-<%= simple_form_for(@income) do |f| %>
+<%= simple_form_for(@income, html: { class: 'text-white' }) do |f| %>
   <%= f.input :name %>
   <%= f.input :amount %>
-  <%= f.range_field :amount, :min=>0, :max=>200, :class=>"slide", :id=>"slider1"%>
   <%= f.submit "Submit review", class: "btn btn-primary" %>
 <% end %>

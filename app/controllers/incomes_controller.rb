@@ -8,7 +8,7 @@ class IncomesController < ApplicationController
 
   def show
     @item = Income.find(params[:id])
-    render partial: "shared/show", locals: { item: @item }
+    render "shared/_show", locals: { item: @item }
   end
 
   def new
@@ -19,7 +19,7 @@ class IncomesController < ApplicationController
     @income = Income.new(income_params)
     @income.user = current_user
     if @income.save
-      redirect_to pages_path()
+      redirect_to dashboard_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -30,7 +30,6 @@ class IncomesController < ApplicationController
     @item.destroy
     redirect_to dashboard_path
   end
-
 
   private
 
