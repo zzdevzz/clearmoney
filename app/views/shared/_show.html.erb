@@ -9,45 +9,7 @@
       min: (item.price_history.values.min.round),
       max: item.price_history.values.max.round,
       colors: ["rgba(249, 180, 45, 1)"],
-      library: {
-        scales: {
-          x: {
-            ticks: {
-              color: "white"
-              # // Changes the x-axis tick labels to white
-            },
-            grid: {
-               color: "rgba(255, 255, 255, 1)"
-              # // Changes the x-axis grid lines to a lighter white
-            }
-          },
-          y: {
-            ticks: {
-              color: "white"
-              # // Changes the y-axis tick labels to white
-            },
-            grid: {
-              color: "rgba(255, 255, 255, .5)"
-              # // Changes the y-axis grid lines to a lighter white
-            }
-          }
-        },
-        plugins: {
-          legend: {
-            labels: {
-              color: "white"
-              # // Optional: Changes the legend labels to white if you have a legend
-            }
-          },
-          tooltip: {
-            enabled: true,
-            bodyColor: "white",
-            # // Optional: Changes the tooltip text color to white
-            titleColor: "white"
-            # / Optional: Changes the tooltip title color to white
-          }
-        }
-      }
+      library: chart_library_line_config
       %>
     </div>
   <% else %>
