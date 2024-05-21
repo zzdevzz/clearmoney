@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   resources :articles, only: [:index]
   get '/dashboard', to: "pages#dashboard"
   # post '/open_ai', to: 'articles#open_ai'
-  get '/open_ai', to: 'articles#open_ai'
+  post '/open_ai', to: 'articles#open_ai'
   resources :pages, only: [ :education, :dashboard, :new, :show ]
   namespace :dashboard do
     root to: 'pages#dashboard'
