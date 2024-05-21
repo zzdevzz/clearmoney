@@ -10,9 +10,9 @@ export default class extends Controller {
 
   updateChart() {
     new Chartkick.PieChart("myChart", {
-      "Value 1": parseInt(this.input1Target.value),
-      "Value 2": parseInt(this.input2Target.value),
-      "Value 3": parseInt(this.input3Target.value)
+      "Income": parseInt(this.input1Target.value),
+      "Investment": parseInt(this.input2Target.value),
+      "Expenses": parseInt(this.input3Target.value)
     }, {
       donut: true,
       library: {
