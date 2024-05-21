@@ -1,7 +1,7 @@
 <h1>Find some educational resources to understand your personal finance</h1>
 
 
-<div class="row justify-content-center">
+<div class="row justify-content-center" >
   <div class="col-sm-8 my-3">
     <%= form_with url: articles_path, method: :get, class: "d-flex" do %>
       <%= text_field_tag :query,
@@ -19,20 +19,22 @@
   <input type="submit">
 </form> %>
 
-<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Enable body scrolling</button>
+<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">AI chatbot</button>
 
 <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
   <div class="offcanvas-header">
     <h5 class="offcanvas-title" id="offcanvasScrollingLabel">AI:chat to me</h5>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
-  <div class="offcanvas-body">
-          <%# <%= @response["choices"][0]["message"]["content"] %>
-      <form action="/open_ai" method="get">
-        <input type="text" name="input" placeholder="write here">
-        <input type="submit">
-      </form>
-    <p>Try scrolling the rest of the page to see this option in action.</p>
+  <div class="offcanvas-body" data-controller="open-ai">
+      <%# <form action="/open_ai" method="get"> %>
+        <input type="text" name="input" placeholder="write here" data-open-ai-target="input">
+        <input type="submit" data-action="click->open-ai#openAi" >
+      <%# </form> %>
+      <div data-open-ai-target="results">
+        <p>Try scrolling the rest of the page to see this option in action.</p>
+      </div>
+
   </div>
 </div>
 
