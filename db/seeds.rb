@@ -29,13 +29,13 @@ end
 
 myUser = User.create(first_name: "Dev", last_name: "Isthebest", username: "dev", email: "d3@test.com", password: "123456")
 myUser = User.find(1)
-invest1 = Investment.create(name: "bitcoin", quantity: 0.2, buy_price: 10000)
-invest2 = Investment.create(name: "dogecoin", quantity: 1000, buy_price: 0.05)
+invest1 = Investment.create!(name: "bitcoin", quantity: 0.2, buy_price: 10000, amount: 100)
+invest2 = Investment.create!(name: "dogecoin", quantity: 1000, buy_price: 0.05, amount: 1000)
 invest = [invest1, invest2]
 
-goal1 = Goal.create(name: "Safari", amount: 2000, notes: "Kenya is lit af")
-goal2 = Goal.create(name: "House Deposit", amount: 20000, notes: "I hope this is enough")
-goal3 = Goal.create(name: "bookcamp", amount: 10000, notes: "I hope this is enough")
+goal1 = Goal.create(name: "Safari", amount: 2000, notes: "Kenya is lit af", date_by:  "Mon, 20 May 2024")
+goal2 = Goal.create(name: "House Deposit", amount: 20000, notes: "I hope this is enough", date_by:  "Mon, 20 May 2024")
+goal3 = Goal.create(name: "bookcamp", amount: 10000, notes: "I hope this is enough", date_by:  "Mon, 20 May 2024")
 goals = [goal1, goal2, goal3]
 
 saving1 = Saving.create(name: "main", amount: 2000)
@@ -48,8 +48,8 @@ income2 = Income.create(name: "OF", amount: 10000)
 income3 = Income.create(name: "Freelance", amount: 5000)
 incomes = [income1, income2, income3]
 
-debt1 = Debt.create(name: "bank loan", amount: 5000)
-debt2 = Debt.create(name: "car", amount: 12500)
+debt1 = Debt.create!(name: "bank loan", amount: 5000)
+debt2 = Debt.create!(name: "car", amount: 12500)
 debts = [debt1, debt2]
 
 expense1 = Expense.create(name: "food", amount: 500)

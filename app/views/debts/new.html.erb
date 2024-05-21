@@ -1,6 +1,6 @@
- <%= f.input :title %>
-  <%# <%= f.input :amount %>
-  <%= f.input :company_name %>
+<%= simple_form_for(@debt) do |f| %>
+  <%# <%= f.input :amount %> %>
+  <%= f.input :name %>
   <%= f.input :interest %>
   <%= f.input :notes %>
   <%= f.input :pay_by %>

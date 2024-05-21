@@ -3,6 +3,6 @@ class Goal < ApplicationRecord
   validates :name, presence: true
   validates :amount, presence: true
   validates :notes, presence: true
-  validates :date_by, presence: true
+  # validates :date_by, presence: true
 
 end
