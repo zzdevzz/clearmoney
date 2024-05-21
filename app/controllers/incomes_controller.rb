@@ -1,6 +1,9 @@
 class IncomesController < ApplicationController
   def index
     @item = Income.where(user: current_user)
+    @total = @item.sum
+    income = @item.sum(&:amount)
+    @breakdown = FinanceCalculationsService.new.call(income,income)
     respond_to do |format|
       format.html { render partial: "shared/index", locals: { attribute: @item }, layout: false }
     end

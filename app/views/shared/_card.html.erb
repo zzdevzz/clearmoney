@@ -6,10 +6,12 @@
   <% cardprice = item.amount %>
 <% end %>
 
-<div class="source-card card d-flex flex-row align-items-center justify-content-between p-2">
-  <div class="rounded-circle bg-light">
+<div class="source-card transparent-card p-2 d-flex flex-row align-items-center">
+  <div class="rounded-circle mx-1">
     <i class="fa-solid fa-lightbulb"></i>
   </div>
-  <p class="mb-0"><%= cardname.titleize %></p>
-  <h3 class="mb-0 fs-6"><%= number_to_currency(cardprice , unit: "£")%></h3>
+  <div class="d-flex flex-column ms-2">
+    <p class="mb-0 fs-6"><%= cardname.titleize %></p>
+    <h3 class="mb-0 fs-6"><%= number_to_currency(cardprice , unit: "£")%></h3>
+  </div>
 </div>
