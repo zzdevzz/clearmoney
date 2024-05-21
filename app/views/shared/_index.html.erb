@@ -1,7 +1,7 @@
 <turbo-frame id="content">
   <div class="row" style="gap:.5rem;">
     <div class="col-9">
-      <div class="card p-4 h-100">
+      <div class="transparent-card p-4 h-100">
         <div class="d-flex justify-content-between">
           <div>
             <h3> <%=attribute.name %> Breakdown </h3>
@@ -15,12 +15,12 @@
           <% end %>
         </div>
         <div class="d-flex justify-content-center align-items-center flex-grow-1"> <!-- Flex container for centering the chart -->
-          <%= pie_chart attribute.group("name").sum("amount"), donut: true, legend: "left"%>
+          <%= pie_chart attribute.group("name").sum("amount"), donut: true, legend: "left", dataset: {borderWidth: 0}%>
 
         </div>
       </div>
     </div>
-    <div class="card-container row g-3 p-3 col mt-0 vh-100 card d-block overflow-auto">
+    <div class="card-container row g-3 p-3 col mt-0 vh-100 transparent-card d-block overflow-auto">
       <h3> Sources </h3>
       <% attribute.each do |item| %>
         <%= link_to url_for(controller: controller_path, action: 'show', id: item), class: "col-12 text-decoration-none", data: { turbo: false } do %>
