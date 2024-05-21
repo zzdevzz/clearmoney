@@ -1,0 +1,15 @@
+:concurrency: 3
+:timeout: 10
+:verbose: true
+:queues:
+  # Queue priority:
+  # https://github.com/sidekiq/sidekiq/wiki/Advanced-Options
+  - default
+  - mailers
+  - active_storage_analysis
+  - active_storage_purge
+:scheduler:
+  :schedule:
+    update_prices:
+      cron: '0 * * * * *'   # Runs once per minute
+      class: UpdatePricesCurrentJob

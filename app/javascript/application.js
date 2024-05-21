@@ -6,3 +6,7 @@ import "bootstrap"
 import "chartkick"
 import "Chart.bundle"
 import "chart.js"
+
+document.addEventListener("turbo:load", function() {
+  // Initialize all Bootstrap components or reapply any dynamic styles/scripts
+});

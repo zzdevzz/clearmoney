@@ -16,7 +16,7 @@ video {
   width: 100%; /* 100% of the viewport width */
   overflow: hidden;
   object-fit: cover;
-  filter: brightness(0.50);
+  filter: brightness(0.50) contrast(1.15);
   background-color: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5));
 }
 
@@ -29,7 +29,7 @@ video {
   color: whitesmoke;
   position: absolute;
   top: 50%; left: 20%; transform: translate(-20%, -50%);
-  width: 45%;
+  width: 40%;
   min-width: 470px;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: brightness(1.5) blur(1rem);
