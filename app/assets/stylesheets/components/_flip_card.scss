@@ -8,19 +8,29 @@
   display: flex;
   justify-content: space-around;
 
+  h1 {
+    color: #000606;
+    font-size: 28px;
+  }
+
   h2{
     margin-bottom: 1rem;
-    font-size: 25px;
+    font-size: 20px;
+    color: #000708;
+  }
+
+  p{
+    color: #000606;
   }
 }
 
-.external-link{
-  color: rgb(7, 7, 65);
-}
+// .external-link{
+//   color: rgb(0, 0, 0);
+// }
 
-.external-link:hover{
-  color: rgb(73, 142, 163)
-}
+// .external-link:hover{
+//   color: rgb(73, 142, 163)
+// }
 
 /* This container is needed to position the front and back side */
 .flip-card-inner {
@@ -63,8 +73,18 @@
 
 /* Style the front side (fallback if image is missing) */
 .flip-card-front {
-  color: black;
+  // color: black;
   background-size: cover;
+  // color: whitesmoke;
+  // top: 50%; left: 20%; transform: translate(-20%, -50%);
+  // width: 40%;
+  // min-width: 470px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: brightness(1.8) blur(3rem);
+  // color: #f1f1f1;
+  border-radius: 2rem;
+  transition: all 0.3s;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 /* Style the back side */
