@@ -1,6 +1,6 @@
 <h1>goals</h1>
 
-<%= simple_form_for(@goal) do |f| %>
+<%= simple_form_for(@goal, html: { class: 'text-white' }) do |f| %>
   <%= f.input :name %>
   <%= f.input :amount %>
   <%= f.input :notes %>

@@ -1,4 +1,4 @@
-<%= simple_form_for(@saving) do |f| %>
+<%= simple_form_for(@saving, html: { class: 'text-white' }) do |f| %>
   <%= f.input :name %>
   <%= f.input :amount %>
   <%= f.submit "Submit review", class: "btn btn-primary" %>

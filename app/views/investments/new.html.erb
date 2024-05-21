@@ -1,6 +1,6 @@
 <h1>investments</h1>
 
-<%= simple_form_for(@investment) do |f| %>
+<%= simple_form_for(@investment, html: { class: 'text-white' }) do |f| %>
   <%= f.input :name %>
   <%= f.input :buy_price %>
   <%= f.input :quantity %>

@@ -15,7 +15,8 @@
           <% end %>
         </div>
         <div class="d-flex justify-content-center align-items-center flex-grow-1"> <!-- Flex container for centering the chart -->
-          <%= pie_chart attribute.group("name").sum("amount"), donut: true, legend: "left" %>
+          <%= pie_chart attribute.group("name").sum("amount"), donut: true, legend: "left"%>
+
         </div>
       </div>
     </div>
