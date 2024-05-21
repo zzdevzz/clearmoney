@@ -20,7 +20,7 @@
     <h5 class="offcanvas-title" id="offcanvasScrollingLabel">AI:chat to me</h5>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
-  <div class="offcanvas-body" data-controller="open-ai">
+  <div class="offcanvas-body color-frame" data-controller="open-ai">
       <%# <form action="/open_ai" method="get"> %>
         <input type="text" name="input" placeholder="write here" data-open-ai-target="input">
         <input type="submit" data-action="click->open-ai#openAi" >
@@ -28,7 +28,6 @@
       <div data-open-ai-target="results">
         <p>Try scrolling the rest of the page to see this option in action.</p>
       </div>
-
   </div>
 </div>
 
