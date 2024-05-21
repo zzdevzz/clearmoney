@@ -1,7 +1,15 @@
+<% if controller_name == "users" %>
+  <% cardname = item[0].name %></h2>
+  <% cardprice = item[1].amount %>
+<% else %>
+  <% cardname = item.name %></h2>
+  <% cardprice = item.amount %>
+<% end %>
+
 <div class="source-card card d-flex flex-row align-items-center justify-content-between p-2">
   <div class="rounded-circle bg-light">
     <i class="fa-solid fa-lightbulb"></i>
   </div>
-  <p class="mb-0"><%= item.name %></p>
-  <h3 class="mb-0 fs-6"><%= number_to_currency(item.amount , unit: "£")%></h3>
+  <p class="mb-0"><%= cardname.titleize %></p>
+  <h3 class="mb-0 fs-6"><%= number_to_currency(cardprice , unit: "£")%></h3>
 </div>

@@ -13,7 +13,7 @@ class DebtsController < ApplicationController
     @debt = Debt.new(debt_params)
     @debt.user = current_user
     if @debt.save
-      redirect_to pages_path()
+      redirect_to dashboard_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -25,6 +25,11 @@ class DebtsController < ApplicationController
     respond_to do |format|
       format.html { render partial: "shared/index", locals: { attribute: @debts }, layout: false }
     end
+  end
+
+  def show
+    @item = Debt.find(params[:id])
+    render "shared/_show", locals: { item: @item }
   end
 
   private

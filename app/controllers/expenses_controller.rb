@@ -7,7 +7,7 @@ class ExpensesController < ApplicationController
     @expense = Expense.new(expense_params)
     @expense.user = current_user
     if @expense.save
-      redirect_to pages_path()
+      redirect_to dashboard_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -22,7 +22,7 @@ class ExpensesController < ApplicationController
 
   def show
     @item = Expense.find(params[:id])
-    render partial: "shared/show", locals: { item: @item }
+    render "shared/_show", locals: { item: @item }
   end
 
   def destroy
