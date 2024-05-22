@@ -35,6 +35,6 @@ class DebtsController < ApplicationController
   private
 
   def debt_params
-    params.require(:debt).permit(:company_name, :amount, :notes, :interest, :pay_by)
+    params.require(:debt).permit(:name, :amount, :notes, :interest, :pay_by)
   end
 end
