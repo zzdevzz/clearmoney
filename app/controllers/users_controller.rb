@@ -17,7 +17,7 @@ class UsersController < ApplicationController
     @fixed = [@savings, @debts, @investments, @goals]
 
     respond_to do |format|
-      format.html { render partial: "shared/index2", locals: { attribute: @user }, layout: false }
+      format.html { render partial: "shared/show_user", locals: { attribute: @user}, layout: false }
     end
   end
 

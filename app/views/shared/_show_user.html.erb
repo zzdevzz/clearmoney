@@ -18,8 +18,8 @@
       <div class="transparent-card p-4 h-100">
         <h3> <%=@user.username.titleize %> Breakdown </h3>
         <h4> Total: <%= number_to_currency(fixed.values.sum , unit: "£") %></h4>
-        <%= column_chart yearly, title: "Yearly Expenses", height: "200px", prefix: "£", colors: [greencolour, redcolour], library: chart_library_bar_config %>
-        <%= column_chart fixed, title: "Others", height: "150px", prefix: "£", colors: [greencolour, redcolour, greencolour, greencolour], library: chart_library_bar_config%>
+        <%= column_chart yearly, title: "Annual Overview", height: "200px", prefix: "£", colors: [greencolour, redcolour], library: chart_library_bar_config %>
+        <%= column_chart fixed, title: "Financial Overview", height: "150px", prefix: "£", colors: [greencolour, redcolour, greencolour, greencolour], library: chart_library_bar_config%>
       </div>
     </div>
     <div class="transparent-card card-container row g-3 w-25 p-3 vh-100 col mt-0 d-block overflow-auto">

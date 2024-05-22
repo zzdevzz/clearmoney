@@ -1,20 +1,33 @@
-<div class="container text-white">
-  <h1 class="" data-controller="line-chart"><%= item.name.titleize %></h1>
-  <% if controller_name == "investments" %>
-    <h2> Price bought for: <%= item.amount %></h2>
-    <h3>Current price: <%= item.price_current %> </h3>
-    <div class="">
-      <%= line_chart item.price_history,
-      curve: false, points: false, prefix: "£",
-      min: (item.price_history.values.min.round),
-      max: item.price_history.values.max.round,
-      colors: ["rgba(249, 180, 45, 1)"],
-      library: chart_library_line_config
-      %>
+<% profit = (item.amount - (item.buy_price * item.quantity)).round(2) %>
+<% color = profit.positive? ? "text-success" : "text-danger" %>
+<div class="container text-white mt-5">
+  <div class="d-flex align-items-center justify-content-between">
+    <h1 class="" data-controller="line-chart"><%="#{item.class}: #{item.name.titleize}" %></h1>
+    <div class="btn-group">
+      <%= button_to "Delete Item", url_for(controller: controller_path, action: 'destroy'), class: "btn btn-warning me-3", method: :delete, data: {turbo_confirm: 'Are you sure?'} %>
+      <%= link_to "Back to Dashboard", dashboard_path, class: "btn btn-info", data: { turbo: false } %>
     </div>
-  <% else %>
-    <h2> Price bought for: <%= item.amount %></h2>
-  <% end %>
-  <%= link_to "Back to Dashboard", dashboard_path, class: "btn btn-warning", data: { turbo: false } %>
-  <%= button_to "Delete Item", url_for(controller: controller_path, action: 'destroy'), class: "btn btn-warning", method: :delete, data: {turbo_confirm: 'Are you sure?'} %>
+  </div>
+  <div class="mt-3">
+    <% if controller_name == "investments" %>
+      <div class="d-flex align-items-center justify-content-between">
+        <h3>Price bought for: <%= item.buy_price %></h3>
+        <h3>Current price: <%= item.price_current %></h3>
+        <h3 class="<%=color%>">Current net: <%= profit  %></h3>
+      </div>
+      <div class="mt-4">
+      <h4 class="text-center mb-5">90 Day Price Action for  <%= item.name.titleize %> </h4>
+        <%= line_chart item.price_history,
+        curve: false, points: false, prefix: "£",
+        min: (item.price_history.values.min.round),
+        max: item.price_history.values.max.round,
+        xtitle: "Price", ytitle: "Date",
+        colors: ["rgba(249, 180, 45, 1)"],
+        library: chart_library_line_config
+        %>
+      </div>
+    <% else %>
+      <h2> Price bought for: <%= item.amount %></h2>
+    <% end %>
+  </div>
 </div>
