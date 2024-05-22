@@ -1,5 +1,6 @@
 class IncomesController < ApplicationController
   def index
+    @path = 'income'
     @item = Income.where(user: current_user)
     @total = @item.sum
     income = @item.sum(&:amount)
