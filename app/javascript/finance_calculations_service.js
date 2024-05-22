@@ -1,7 +1,7 @@
-class FinanceCalculationsService {
+export class FinanceCalculationsService {
   call(income = 0, salary = 0) {
       const incomeTax = this.calculateTax(income);
-      const nationalInsurance = this.calculateNationalInsurance(salary);
+      const nationalInsurance = this.calculateNationalInsurance(income);
       const studentLoan = this.calculateStudentLoanRepayment(income);
 
       const disposableIncome = income - (incomeTax + nationalInsurance + studentLoan);
@@ -39,29 +39,26 @@ class FinanceCalculationsService {
   }
 
   calculateNationalInsurance(salary) {
-      if (salary === null) return 0;
+    if (salary === null) return 0;
 
-      const lowerThreshold = 123;
-      const upperThreshold = 242;
-      const additionalThreshold = 967;
-      const monthlyLowerThreshold = 533;
-      const monthlyUpperThreshold = 1048;
-      const monthlyAdditionalThreshold = 4189;
+    // Annual thresholds for national insurance contributions
+    const annualLowerThreshold = 12570;  // Adjusted to match annual figures, e.g., £12,570
+    const annualUpperThreshold = 50270;  // Adjusted to match annual figures, e.g., £50,270
+    const annualAdditionalThreshold = 9670;  // Adjusted to match annual figures, e.g., £96,700
 
-      let weeklySalary = salary > monthlyLowerThreshold ? salary / 4.333 : salary;
+    let ni = 0;
+    if (salary <= annualLowerThreshold) {
+        ni = 0;
+    } else if (salary <= annualUpperThreshold) {
+        ni = (salary - annualLowerThreshold) * 0.12;  // 12% between lower and upper threshold
+    } else if (salary <= annualAdditionalThreshold) {
+        ni = (annualUpperThreshold - annualLowerThreshold) * 0.12 + (salary - annualUpperThreshold) * 0.02;  // 2% on everything above the upper threshold
+    } else {
+        // If salary exceeds additional threshold
+        ni = (annualUpperThreshold - annualLowerThreshold) * 0.12 + (annualAdditionalThreshold - annualUpperThreshold) * 0.02;
+    }
 
-      let ni = 0;
-      if (weeklySalary <= lowerThreshold) {
-          ni = 0;
-      } else if (weeklySalary <= upperThreshold) {
-          ni = (weeklySalary - lowerThreshold) * 0.08;
-      } else if (weeklySalary <= additionalThreshold) {
-          ni = (upperThreshold - lowerThreshold) * 0.08 + (weeklySalary - upperThreshold) * 0.08;
-      } else {
-          ni = (upperThreshold - lowerThreshold) * 0.08 + (additionalThreshold - upperThreshold) * 0.08 + (weeklySalary - additionalThreshold) * 0.02;
-      }
-
-      return ni;
+    return ni;
   }
 
   calculateStudentLoanRepayment(income) {

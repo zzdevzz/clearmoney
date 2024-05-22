@@ -10,3 +10,8 @@ import "chart.js"
 document.addEventListener("turbo:load", function() {
   // Initialize all Bootstrap components or reapply any dynamic styles/scripts
 });
+
+
+function updateTextInput(val) {
+  document.getElementById('textInput').innerHTML=val;
+}

@@ -38,32 +38,19 @@ class FinanceCalculationsService
 
   def calculate_national_insurance(salary)
     return 0 if salary.nil?
-    # Weekly thresholds
-    lower_threshold = 123
-    upper_threshold = 242
-    additional_threshold = 967
 
-    # Monthly equivalents for easier input handling
-    monthly_lower_threshold = 533
-    monthly_upper_threshold = 1048
-    monthly_additional_threshold = 4189
+    # Annual thresholds for national insurance contributions
+    annual_lower_threshold = 12570  # Example: £12,570
+    annual_upper_threshold = 50270  # Example: £50,270
+    annual_additional_threshold = 96700  # Example: £96,700
 
-    # Convert monthly salary to weekly if needed
-    if salary > monthly_lower_threshold # assuming the salary is entered monthly if it's higher than monthly lower threshold
-      weekly_salary = salary / 4.333 # average weeks per month
-    else
-      weekly_salary = salary # assume salary is weekly if it's below the monthly lower threshold
-    end
-
-    # Calculate NI based on weekly salary
-    if weekly_salary <= lower_threshold
+    # Calculate NI based on annual salary
+    if salary <= annual_lower_threshold
       ni = 0
-    elsif weekly_salary <= upper_threshold
-      ni = (weekly_salary - lower_threshold) * 0.08
-    elsif weekly_salary <= additional_threshold
-      ni = (upper_threshold - lower_threshold) * 0.08 + (weekly_salary - upper_threshold) * 0.08
-    else
-      ni = (upper_threshold - lower_threshold) * 0.08 + (additional_threshold - upper_threshold) * 0.08 + (weekly_salary - additional_threshold) * 0.02
+    elsif salary <= annual_upper_threshold
+      ni = (salary - annual_lower_threshold) * 0.12  # 12% rate between lower and upper threshold
+    elsif salary > annual_upper_threshold
+      ni = (annual_upper_threshold - annual_lower_threshold) * 0.12 + (salary - annual_upper_threshold) * 0.02  # 2% on everything above upper threshold
     end
 
     ni
