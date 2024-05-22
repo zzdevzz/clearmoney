@@ -35,6 +35,17 @@ class InvestmentsController < ApplicationController
     redirect_to dashboard_path
   end
 
+  def edit
+    @investment = Investment.find(params[:id])
+  end
+
+  def update
+    @investment = Investment.find(params[:id])
+    @investment.update(investment_params)
+    # No need for app/views/restaurants/update.html.erb
+    redirect_to investment_path(@investment)
+  end
+
   private
 
   def investment_params

@@ -31,6 +31,18 @@ class GoalsController < ApplicationController
     redirect_to dashboard_path
   end
 
+  def edit
+    @goal = Goal.find(params[:id])
+  end
+
+  def update
+    @goal = Goal.find(params[:id])
+    @goal.update(goal_params)
+    # No need for app/views/restaurants/update.html.erb
+    redirect_to goal_path(@goal)
+  end
+
+
   private
 
   def goal_params

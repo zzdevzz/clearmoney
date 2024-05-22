@@ -1,0 +1,9 @@
+<%= simple_form_for(@expense, html: { class: 'text-white ' }) do |f| %>
+  <%= f.input :name, input_html: { class: 'form-control dark-form-input'} %>
+  <%= f.input :amount, input_html: { class: 'form-control dark-form-input'}  %>
+  <% if @expense.id %>
+    <%= f.submit "Update expense", class: "btn btn-primary" %>
+  <% else %>
+    <%= f.submit "Add expense", class: "btn btn-primary" %>
+  <% end %>
+<% end %>
