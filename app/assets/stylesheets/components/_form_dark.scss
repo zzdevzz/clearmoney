@@ -1,6 +1,6 @@
 :is(input, select).dark-form-input {
   // background-color: #343a40; /* Bootstrap's dark background */
-  background-color: $theme-background-dark;
+  background-color: $theme-card-dark;
   color: white; /* White text */
   border-color: $theme-purple; /* Slightly lighter border */
 }
