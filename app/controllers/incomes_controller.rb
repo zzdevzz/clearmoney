@@ -34,6 +34,18 @@ class IncomesController < ApplicationController
     redirect_to dashboard_path
   end
 
+  def edit
+    @income = Income.find(params[:id])
+  end
+
+  def update
+    @income = Income.find(params[:id])
+    @income.update(income_params)
+    # No need for app/views/restaurants/update.html.erb
+    redirect_to income_path(@income)
+  end
+
+
   private
 
   def income_params

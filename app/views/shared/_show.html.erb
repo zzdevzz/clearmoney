@@ -16,5 +16,6 @@
     <h2> Price bought for: <%= item.amount %></h2>
   <% end %>
   <%= link_to "Back to Dashboard", dashboard_path, class: "btn btn-warning", data: { turbo: false } %>
+  <%= link_to 'Update', url_for(controller: controller_path, action: 'edit')%>
   <%= button_to "Delete Item", url_for(controller: controller_path, action: 'destroy'), class: "btn btn-warning", method: :delete, data: {turbo_confirm: 'Are you sure?'} %>
 </div>
