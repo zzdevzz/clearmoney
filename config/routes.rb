@@ -26,16 +26,16 @@ Rails.application.routes.draw do
     root to: 'pages#dashboard'
     get 'investments', to: 'investments#index', as: :dashboard_investments
   end
-  resources :goals, only: [ :new, :create, :index, :show, :destroy]
-  resources :investments, only: [ :new, :create, :index, :show, :destroy ] do
+  resources :goals
+  resources :investments do
     member do
       get :chart
     end
   end
-  resources :debts, only: [ :new, :create, :index, :show, :destroy ]
-  resources :expenses, only: [ :new, :create, :index, :show, :destroy]
-  resources :savings, only: [ :new, :create, :index, :show, :destroy]
-  resources :incomes, only: [ :new, :create, :index, :show, :destroy]
+  resources :debts
+  resources :expenses
+  resources :savings
+  resources :incomes
   resources :users, only: [:show]
 
 

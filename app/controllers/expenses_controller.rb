@@ -31,6 +31,18 @@ class ExpensesController < ApplicationController
     redirect_to dashboard_path
   end
 
+  def edit
+    @expense = Expense.find(params[:id])
+  end
+
+  def update
+    @expense = Expense.find(params[:id])
+    @expense.update(expense_params)
+    # No need for app/views/restaurants/update.html.erb
+    redirect_to expense_path(@expense)
+  end
+
+
   private
 
   def expense_params

@@ -39,6 +39,17 @@ class DebtsController < ApplicationController
     redirect_to dashboard_path
   end
 
+  def edit
+    @debt = Debt.find(params[:id])
+  end
+
+  def update
+    @debt = Debt.find(params[:id])
+    @debt.update(debt_params)
+    # No need for app/views/restaurants/update.html.erb
+    redirect_to debt_path(@debt)
+  end
+
   private
 
   def debt_params

@@ -32,7 +32,18 @@ class SavingsController < ApplicationController
     @item.destroy
     redirect_to dashboard_path
   end
-  
+
+  def edit
+    @saving = Saving.find(params[:id])
+  end
+
+  def update
+    @saving = Saving.find(params[:id])
+    @saving.update(saving_params)
+    # No need for app/views/restaurants/update.html.erb
+    redirect_to saving_path(@saving)
+  end
+
   private
 
   def saving_params
