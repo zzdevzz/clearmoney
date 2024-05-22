@@ -27,14 +27,14 @@
         </div>
       </div>
     </div>
-    <div class="card-container row g-3 p-3 col mt-0 vh-100 transparent-card d-block overflow-auto">
+    <div class="card-container row g-3 p-3 col mt-0 vh-100 transparent-card d-block overflow-auto custom-scroll">
       <h3> Sources </h3>
       <% attribute.each do |item| %>
         <%= link_to url_for(controller: controller_path, action: 'show', id: item), class: "col-12 text-decoration-none", data: { turbo: false } do %>
           <%= render "/shared/card", item: item %>
         <% end %>
       <% end %>
-      <%= link_to "Add new", url_for(controller: controller_path, action: 'new'), class: "col-12 btn btn-warning ", data: { turbo: false } %>
+      <%= link_to "Add new", url_for(controller: controller_path, action: 'new'), class: "col-12 btn btn-warning d-block", data: { turbo: false } %>
     </div>
   </div>
 </turbo-frame>

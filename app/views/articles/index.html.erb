@@ -1,4 +1,4 @@
-<h1 class="text-white mt-5">Find some educational resources to understand your personal finance</h1>
+<h1 class="text-white mt-5">Educational resources to help you on your financial journey.</h1>
 
 <div class="row justify-content-center" >
   <div class="col-sm-8 my-3 d-flex flex-column">
@@ -6,7 +6,7 @@
       <%= text_field_tag :query,
         params[:query],
         class: "form-control",
-        placeholder: "Type a keyword"
+        placeholder: "Search a topic of interest"
         %>
       <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
     <% end %>
@@ -15,18 +15,16 @@
 </div>
 
 <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
-  <div class="offcanvas-header navbar-lewagon">
-    <h5 class="offcanvas-title" id="offcanvasScrollingLabel">AI:chat to me</h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  <div class="offcanvas-header navbar-lewagon navbar-expand-sm">
+    <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Financial Friend <i class="fa-solid fa-robot"></i></h5>
+    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
-  <div class="offcanvas-body color-frame" data-controller="open-ai">
-      <%# <form action="/open_ai" method="get"> %>
-        <input type="text" name="input" placeholder="write here" data-open-ai-target="input">
-        <input type="submit" data-action="click->open-ai#openAi" >
-      <%# </form> %>
-      <div data-open-ai-target="results">
-        <p class="text-white">whats on your mind?</p>
-      </div>
+  <div class="offcanvas-body color-frame overflow-auto custom-scroll" data-controller="open-ai">
+    <input type="text" name="input" placeholder="How can I help?" data-open-ai-target="input">
+    <input type="submit" data-action="click->open-ai#openAi" >
+    <div data-open-ai-target="results" class="">
+      <p class="text-white">Our FinAIncial advisor is here to assist 24/7.</p>
+    </div>
   </div>
 </div>
 
@@ -38,14 +36,13 @@
       <div class="flip-card mt-5">
         <div class="flip-card-inner">
           <div class="flip-card-front">
-            <%= image_tag photo_url, style: "width: 100%; height: 55%" %>
-            <div class="p-3 text-content mb-3">
-              <h2><%= article.title %></h2>
-              <p><strong><%= article.description %></strong></p>
+            <%= image_tag photo_url, style: "height: 65%; width: 100%; object-fit: cover;" %>
+            <div class="p-3 text-content d-flex align-items-center justify-content-center">
+              <h2 class="mb-0"><%= article.title.titleize %></h2>
             </div>
           </div>
-          <div class="flip-card-back p-4 text-content">
-            <h2><%= article.title %></h2>
+          <div class="flip-card-back p-4 text-content purple-gradient-bg">
+            <h2><%= article.title.titleize %></h2>
             <p><%= article.description %></p>
           </div>
         </div>

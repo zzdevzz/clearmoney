@@ -22,7 +22,7 @@
         <%= column_chart fixed, title: "Financial Overview", height: "150px", prefix: "£", colors: [greencolour, redcolour, greencolour, greencolour], library: chart_library_bar_config%>
       </div>
     </div>
-    <div class="transparent-card card-container row g-3 w-25 p-3 vh-100 col mt-0 d-block overflow-auto">
+    <div class="transparent-card card-container row g-3 w-25 p-3 vh-100 col mt-0 d-block overflow-auto custom-scroll">
       <h3> Sources </h3>
       <% @item.each do |item| %>
         <%= link_to "", class: "col-12 text-decoration-none", data: { turbo: false } do %>

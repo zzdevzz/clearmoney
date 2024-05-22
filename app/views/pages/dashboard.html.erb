@@ -3,7 +3,7 @@
     <div class="row p-5">
       <%= render "shared/dashboard_actions" %>
       <turbo-frame id="content" class="col-10">
-        <%= render partial: "shared/show_user", locals: { attribute: @user}, layout: false  %>
+        <%= render partial: "shared/show_user", layout: false  %>
         <!-- Initial content or a spinner/loader can go here -->
       </turbo-frame>
     </div>
