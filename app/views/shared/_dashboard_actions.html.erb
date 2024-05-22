@@ -1,43 +1,43 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon col-2 p-0 transparent-card" id="navbarSupportedContent">
   <ul class="dashboard-actions navbar-nav flex-sm-column h-100 me-auto me-0">
     <li class="nav-item active">
-      <%= link_to user_path(current_user), class: "nav-link text-reset btn-sm", data: { turbo_frame: "content" } do %>
+      <%= link_to user_path(current_user), class: "nav-link text-reset btn-sm active", data: { actions_target: "button", action: "click->actions#highlightButton", turbo_frame: "content" } do %>
         <i class="fa-regular fa-user"></i>
         <h3>Summary</h3>
       <% end %>
     </li>
     <li class="nav-item active">
-      <%= link_to incomes_path, class: "nav-link text-reset btn-sm", data: { turbo_frame: "content" } do %>
+      <%= link_to incomes_path, class: "nav-link text-reset btn-sm", data: { actions_target: "button", action: "click->actions#highlightButton", turbo_frame: "content" } do %>
         <i class="fa-solid fa-coins"></i>
         <h3>Income</h3>
       <% end %>
     </li>
     <li class="nav-item active">
-      <%= link_to savings_path, class: "nav-link text-reset btn-sm", data: { turbo_frame: "content" } do %>
+      <%= link_to savings_path, class: "nav-link text-reset btn-sm", data: { actions_target: "button", action: "click->actions#highlightButton", turbo_frame: "content" } do %>
         <i class="fa-solid fa-building-columns"></i>
         <h3>Savings</h3>
       <% end %>
     </li>
     <li class="nav-item active">
-      <%= link_to expenses_path, class: "nav-link text-reset btn-sm", data: { turbo_frame: "content" } do %>
+      <%= link_to expenses_path, class: "nav-link text-reset btn-sm", data: { actions_target: "button", action: "click->actions#highlightButton", turbo_frame: "content" } do %>
         <i class="fa-solid fa-cart-plus"></i>
         <h3>Expenses</h3>
       <% end %>
     </li>
     <li class="nav-item active">
-      <%= link_to debts_path, class: "nav-link text-reset btn-sm", data: { turbo_frame: "content" } do %>
+      <%= link_to debts_path, class: "nav-link text-reset btn-sm", data: { actions_target: "button", action: "click->actions#highlightButton", turbo_frame: "content" } do %>
         <i class="fa-solid fa-credit-card"></i>
         <h3>Debts</h3>
       <% end %>
     </li>
     <li class="nav-item active">
-      <%= link_to investments_path, class: "nav-link text-reset btn-sm", data: { turbo_frame: "content" } do %>
+      <%= link_to investments_path, class: "nav-link text-reset btn-sm", data: { actions_target: "button", action: "click->actions#highlightButton", turbo_frame: "content" } do %>
         <i class="fa-solid fa-money-bill-trend-up"></i>
         <h3>Investments</h3>
       <% end %>
     </li>
     <li class="nav-item active">
-      <%= link_to goals_path, class: "nav-link text-reset btn-sm", data: { turbo_frame: "content" } do %>
+      <%= link_to goals_path, class: "nav-link text-reset btn-sm", data: { actions_target: "button", action: "click->actions#highlightButton", turbo_frame: "content" } do %>
         <i class="fa-solid fa-bullseye"></i>
         <h3>Goals</h3>
       <% end %>

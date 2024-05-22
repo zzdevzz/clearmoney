@@ -10,3 +10,9 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+a.active * {
+  filter: contrast(1.5);
+  color: gold;
+}
