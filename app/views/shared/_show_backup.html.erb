@@ -2,8 +2,7 @@
   <div class="d-flex align-items-center justify-content-between">
     <h1 class="" data-controller="line-chart"><%="#{item.class}: #{item.name.titleize}" %></h1>
     <div class="btn-group">
-      <%= button_to "Delete", url_for(controller: controller_path, action: 'destroy'), class: "btn btn-warning me-3", method: :delete, data: {turbo_confirm: 'Are you sure?'} %>
-      <%= link_to 'Update', url_for(controller: controller_path, action: 'edit'), class: "btn btn-info me-3"%>
+      <%= button_to "Delete Item", url_for(controller: controller_path, action: 'destroy'), class: "btn btn-warning me-3", method: :delete, data: {turbo_confirm: 'Are you sure?'} %>
       <%= link_to "Back to Dashboard", dashboard_path, class: "btn btn-info", data: { turbo: false } %>
     </div>
   </div>
@@ -31,5 +30,4 @@
       <h2> Price bought for: <%= item.amount %></h2>
     <% end %>
   </div>
-
 </div>

@@ -22,7 +22,7 @@ export default class extends Controller {
       console.log(data)
       const div = this.resultsTarget
       div.innerHTML = ""
-      div.insertAdjacentHTML("beforeend", `<p>${data}</p>`)
+      div.insertAdjacentHTML("beforeend", `<p class="text-white">${data}</p>`)
 
     })
 

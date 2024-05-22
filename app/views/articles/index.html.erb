@@ -19,10 +19,10 @@
     <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Financial Friend <i class="fa-solid fa-robot"></i></h5>
     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
-  <div class="offcanvas-body color-frame" data-controller="open-ai">
+  <div class="offcanvas-body color-frame overflow-auto custom-scroll" data-controller="open-ai">
     <input type="text" name="input" placeholder="How can I help?" data-open-ai-target="input">
     <input type="submit" data-action="click->open-ai#openAi" >
-    <div data-open-ai-target="results">
+    <div data-open-ai-target="results" class="">
       <p class="text-white">Our FinAIncial advisor is here to assist 24/7.</p>
     </div>
   </div>
