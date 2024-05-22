@@ -32,6 +32,13 @@ class DebtsController < ApplicationController
     render "shared/_show", locals: { item: @item }
   end
 
+
+  def destroy
+    @item = Debt.find(params[:id])
+    @item.destroy
+    redirect_to dashboard_path
+  end
+
   private
 
   def debt_params

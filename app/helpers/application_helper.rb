@@ -64,6 +64,14 @@ module ApplicationHelper
             color: "white" # Optional: Changes the legend labels to white if you have a legend
           }
         },
+        title: {
+          color: "white",
+          font: {
+            weight: "normal",
+            family: "Montserrat, sans-serif",
+            size: "16"
+          }
+        },
         tooltip: {
           enabled: true,
           bodyColor: "white", # Optional: Changes the tooltip text color to white
@@ -99,6 +107,14 @@ module ApplicationHelper
         legend: {
           labels: {
             color: "white" # Optional: Changes the legend labels to white if you have a legend
+          }
+        },
+        title: {
+          color: "white",
+          font: {
+            weight: "normal",
+            family: "Montserrat, sans-serif",
+            size: "12"
           }
         },
         tooltip: {
