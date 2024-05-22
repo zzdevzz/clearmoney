@@ -1,0 +1,8 @@
+.color-purple {
+  color: $theme-purple;
+}
+
+.purple-gradient-bg {
+  background: rgb(5,29,53);
+  background-image: linear-gradient(35deg, $theme-card-dark 10%, $theme-purple 100%);
+}

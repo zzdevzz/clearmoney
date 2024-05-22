@@ -6,19 +6,3 @@
 .light-mode {
   color: whitesmoke;
 }
-
-.transparent-card{
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: brightness(2.2) blur(1rem) contrast(1.2);
-  color: #f1f1f1;
-  border-radius: 1rem;
-  transition: all 0.3s;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  // background: rgba(5,29,53,.3);
-  background: linear-gradient(40deg, rgba(0,89,127,.1) 10%, rgba(0,89,127,1) 100%);
-  background-blend-mode: darken;
-  // background: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  border: 3px solid rgba(255, 255, 255, 0.32);
-
-}

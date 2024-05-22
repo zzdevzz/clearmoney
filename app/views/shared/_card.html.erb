@@ -1,6 +1,6 @@
 <% if controller_name == "pages" || controller_name == "users" %>
-  <% cardname = item[0].name %></h2>
-  <% cardprice = item[1].amount %>
+  <% cardname = item.name %></h2>
+  <% cardprice = item.sum(:amount) %>
 <% else %>
   <% cardname = item.name %></h2>
   <% cardprice = item.amount %>
