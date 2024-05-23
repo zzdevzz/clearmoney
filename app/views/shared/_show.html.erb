@@ -28,7 +28,7 @@
         %>
       </div>
     <% else %>
-      <h2> Price bought for: <%= item.amount %></h2>
+      <h2> Price bought for: <%= number_to_currency( item.amount , unit: "£") %></h2>
     <% end %>
   </div>
 
