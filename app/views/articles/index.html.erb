@@ -30,25 +30,28 @@
   </div>
 </div>
 
-
-<div class="row">
-  <% @articles.each_with_index do |article, index| %>
-    <% photo_url = image_path "https://source.unsplash.com/random/?#{index},finance" %>
-    <a href="<%=article.url%>" class="col-lg-4 col-md-6 col-12" target="_blank">
-      <div class="flip-card mt-5">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <%= image_tag photo_url, style: "height: 65%; width: 100%; object-fit: cover;" %>
-            <div class="p-3 text-content d-flex align-items-center justify-content-center">
-              <h2 class="mb-0 text-white"><%= article.title.titleize %></h2>
+<div class="">
+  <div class="row mb-5 gx-5">
+    <% @articles.each_with_index do |article, index| %>
+      <% photo_url = image_path "https://source.unsplash.com/random/?#{index},finance" %>
+      <div class="col-lg-4 col-md-6 col-12">
+        <a href="<%=article.url%>" target="_blank">
+          <div class="flip-card mt-5">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <%= image_tag photo_url, style: "height: 65%; width: 100%; object-fit: cover;" %>
+                <div style="height: 35%" class="text-content d-flex align-items-center justify-content-center">
+                  <h2 class="mb-0 text-white p-3 text-center"><%= article.title.titleize %></h2>
+                </div>
+              </div>
+              <div class="flip-card-back p-4 text-content purple-gradient-bg">
+                <h2 class="text-white"><%= article.title.titleize %></h2>
+                <p class="text-white"><%= article.description %></p>
+              </div>
             </div>
           </div>
-          <div class="flip-card-back p-4 text-content purple-gradient-bg">
-            <h2 class="text-white"><%= article.title.titleize %></h2>
-            <p class="text-white"><%= article.description %></p>
-          </div>
-        </div>
+        </a>
       </div>
-    </a>
-  <% end %>
+    <% end %>
+  </div>
 </div>

@@ -1,11 +1,15 @@
+$card-round: 1.5rem;
+
 .flip-card {
   background-color: transparent;
   width: 100%;
   height: 350px;
-  border-radius: 1rem;
-  padding: 1rem;
+  border-radius: $card-round;
+  overflow: hidden;
+  // padding: 1rem;
   display: flex;
   justify-content: space-around;
+  // border: solid 2px $theme-green;
 
   h1 {
     color: #000606;
@@ -59,9 +63,12 @@
   height: 100%;
   -webkit-backface-visibility: hidden; /* Safari */
   backface-visibility: hidden;
-  border-radius: 40px;
+  border-radius: $card-round;
   overflow: hidden;
   box-shadow: 0px 2px 4px rgba($color: #000000, $alpha: 0.2);
+  transition: all;
+
+
 
 }
 
@@ -81,7 +88,7 @@
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: brightness(1.8) blur(3rem);
   // color: #f1f1f1;
-  border-radius: 2rem;
+  // border-radius: 2rem;
   transition: all 0.3s;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
@@ -90,7 +97,8 @@
 .flip-card-back {
   background-color: rgb(80, 142, 242);
   transform: rotateY(180deg);
-  padding: 10px;
+  // padding: 10px;
+  border-bottom: solid .25rem $theme-green;
 }
 
 .truncate {
