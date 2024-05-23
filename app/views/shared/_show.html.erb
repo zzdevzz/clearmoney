@@ -1,9 +1,9 @@
 <div class="container text-white mt-5">
   <div class="d-flex align-items-center justify-content-between">
     <h1 class="" data-controller="line-chart"><%="#{item.class}: #{item.name.titleize}" %></h1>
-    <div class="btn-group">
-      <%= button_to "Delete", url_for(controller: controller_path, action: 'destroy'), class: "btn btn-danger me-3", method: :delete, data: {turbo_confirm: 'Are you sure?'} %>
-      <%= link_to 'Update', url_for(controller: controller_path, action: 'edit'), class: "btn btn-info me-3"%>
+    <div class="d-flex">
+      <%= button_to "Delete", url_for(controller: controller_path, action: 'destroy'), class: "btn btn-outline-danger me-3", method: :delete, data: {turbo_confirm: 'Are you sure?'} %>
+      <%= link_to 'Update', url_for(controller: controller_path, action: 'edit'), class: "btn btn-outline-info me-3"%>
       <%= link_to "Back to Dashboard", dashboard_path, class: "btn btn-warning", data: { turbo: false } %>
     </div>
   </div>
@@ -12,9 +12,9 @@
       <% profit = (item.amount - (item.buy_price * item.quantity)).round(2) %>
       <% color = profit.positive? ? "text-success" : "text-danger" %>
       <div class="d-flex align-items-center justify-content-between">
-        <h3>Price bought for: <%= item.buy_price %></h3>
-        <h3>Current price: <%= item.price_current %></h3>
-        <h3 class="<%=color%>">Current net: <%= profit  %></h3>
+        <h3>Price bought for: <%= number_to_currency( item.buy_price , unit: "£") %></h3>
+        <h3>Current price: <%= number_to_currency( item.price_current , unit: "£") %></h3>
+        <h3 class="<%=color%>">Current net: <%= number_to_currency( profit , unit: "£")%></h3>
       </div>
       <div class="mt-4">
       <h4 class="text-center mb-5">90 Day Price Action for  <%= item.name.titleize %> </h4>

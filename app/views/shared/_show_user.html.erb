@@ -16,8 +16,9 @@
   <div class="row" style="gap:.5rem;">
     <div class="col-9">
       <div class="transparent-card p-4 h-100">
-        <h3> <%=@user.username.titleize %> Breakdown </h3>
-        <h4> Total: <%= number_to_currency(fixed.values.sum , unit: "£") %></h4>
+        <h3> <%=@user.username.titleize %>'s Breakdown </h3>
+        <h4> Annual Income: <%= number_to_currency(@incomes.sum(&:amount) , unit: "£") %> </h4>
+        <h4> Net Worth: <%= number_to_currency(@savings.sum(&:amount) + @investments.sum(&:amount) , unit: "£") %> </h4>
         <%= column_chart yearly, title: "Annual Overview", height: "200px", prefix: "£", colors: [greencolour, redcolour], library: chart_library_bar_config %>
         <%= column_chart fixed, title: "Financial Overview", height: "150px", prefix: "£", colors: [greencolour, redcolour, greencolour, greencolour], library: chart_library_bar_config%>
       </div>
