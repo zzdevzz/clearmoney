@@ -9,12 +9,7 @@
 //   margin-top: 15px;
 // }
 
-h2, h4{
-  margin: .5rem 0;
-  font-weight: 500;
-  line-height: 1.2;
-  color: white
-}
+
 .team-member {
   // margin-top: 0px;
   // background: #5f4e655c;
@@ -42,6 +37,13 @@ h2, h4{
     margin-top: 8px;
     color: whitesmoke;
   }
+
+  h2, h4{
+    margin: .5rem 0;
+    font-weight: 500;
+    line-height: 1.2;
+    color: white
+  }
 }
 
 .photo {
@@ -56,11 +58,11 @@ h2, h4{
 
 .write-up {
   margin-top: 70px ;
-  font-size: 20px;
+  // font-size: 20px;
   height: 100%;
-  text-align: center;
+  // text-align: center;
   display: flex;
   justify-content: center;
-  width: 100%;
+  // width: 100%;
   color: white;
 }

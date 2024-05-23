@@ -6,22 +6,24 @@
       <%= text_field_tag :query,
         params[:query],
         class: "form-control",
-        placeholder: "Search a topic of interest"
+        placeholder: " Search a topic of interest"
         %>
-      <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+      <%= submit_tag "Search", name: "", class: "ms-3 btn btn-primary" %>
     <% end %>
     <button class="btn btn-primary align-self-end mt-2" id="aiicon"type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><i class="fa-solid fa-graduation-cap"></i></button>
   </div>
 </div>
 
-<div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+<div class="offcanvas offcanvas-end border-green-left" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
   <div class="offcanvas-header navbar-lewagon navbar-expand-sm">
-    <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Financial Friend <i class="fa-solid fa-robot"></i></h5>
+    <h5 class="offcanvas-title mx-auto" id="offcanvasScrollingLabel"> Financial Friend <i class="fa-solid fa-robot"></i></h5>
     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div class="offcanvas-body color-frame overflow-auto custom-scroll" data-controller="open-ai">
-    <input type="text" name="input" placeholder="How can I help?" data-open-ai-target="input">
-    <input type="submit" data-action="click->open-ai#openAi" >
+    <div class="mb-4 m-3 d-flex flex-row">
+      <input type="text" class="form-control" name="input" placeholder="How can I help?" data-open-ai-target="input">
+      <input type="submit" class="btn btn-primary ms-2 " value = "Search" data-action="click->open-ai#openAi" >
+    </div>
     <div data-open-ai-target="results" class="">
       <p class="text-white">Our FinAIncial advisor is here to assist 24/7.</p>
     </div>
@@ -38,12 +40,12 @@
           <div class="flip-card-front">
             <%= image_tag photo_url, style: "height: 65%; width: 100%; object-fit: cover;" %>
             <div class="p-3 text-content d-flex align-items-center justify-content-center">
-              <h2 class="mb-0"><%= article.title.titleize %></h2>
+              <h2 class="mb-0 text-white"><%= article.title.titleize %></h2>
             </div>
           </div>
           <div class="flip-card-back p-4 text-content purple-gradient-bg">
-            <h2><%= article.title.titleize %></h2>
-            <p><%= article.description %></p>
+            <h2 class="text-white"><%= article.title.titleize %></h2>
+            <p class="text-white"><%= article.description %></p>
           </div>
         </div>
       </div>
