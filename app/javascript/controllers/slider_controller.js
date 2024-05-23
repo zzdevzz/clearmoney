@@ -1,6 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
-import { plugins } from "chart.js";
-import { FinanceCalculationsService } from "../finance_calculations_service";
+import { FinanceCalculationsService } from "../finance_calculations_service.js";
 
 
 export default class extends Controller {
