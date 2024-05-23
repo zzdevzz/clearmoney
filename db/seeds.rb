@@ -44,8 +44,7 @@ savings = [saving1, saving2, saving3]
 
 income1 = Income.create(name: "primary", amount: 30000)
 income2 = Income.create(name: "tutoring", amount: 10000)
-income3 = Income.create(name: "freelance", amount: 5000)
-incomes = [income1, income2, income3]
+incomes = [income1, income2]
 
 debt1 = Debt.create(name: "bank loan", amount: 5000)
 debt2 = Debt.create(name: "car", amount: 12500)
