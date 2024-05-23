@@ -37,7 +37,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_17_092255) do
   create_table "expenses", force: :cascade do |t|
     t.string "name"
     t.string "category"
+    t.float "input_amount"
     t.float "amount"
+    t.boolean "occurs_monthly", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false

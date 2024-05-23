@@ -27,15 +27,15 @@ articles.each do |article|
   Article.create!(article)
 end
 
-myUser = User.create(first_name: "Dev", last_name: "Isthebest", username: "dev", email: "d3@test.com", password: "123456")
+myUser = User.create(first_name: "Dev", last_name: "Isthebest", username: "Dev the dev", email: "d3@test.com", password: "123456")
 myUser = User.find(1)
-invest1 = Investment.create(name: "bitcoin", quantity: 0.2, buy_price: 10000, amount: 100)
+invest1 = Investment.create(name: "ethereum", quantity: 1, buy_price: 1000, amount: 10)
 invest2 = Investment.create(name: "dogecoin", quantity: 1000, buy_price: 0.05, amount: 1000)
 invest = [invest1, invest2]
 
-goal1 = Goal.create(name: "Safari", amount: 2000, notes: "Kenya is lit af", date_by:  "Mon, 20 May 2024")
-goal2 = Goal.create(name: "House Deposit", amount: 20000, notes: "I hope this is enough", date_by:  "Mon, 20 May 2024")
-goal3 = Goal.create(name: "bookcamp", amount: 10000, notes: "I hope this is enough", date_by:  "Mon, 20 May 2024")
+goal1 = Goal.create(name: "safari", amount: 2000, notes: "Cousin Mufasa said it would be amazing to see the lions on a safari!", date_by:  "Mon, 20 May 2024")
+goal2 = Goal.create(name: "house deposit", amount: 20000, notes: "Current amount needed for a small flat in London zone 4.", date_by:  "Mon, 20 May 2024")
+goal3 = Goal.create(name: "bootcamp", amount: 10000, notes: "Hopefully once I get this I can transition into a full stack web dev career path.", date_by:  "Mon, 20 May 2024")
 goals = [goal1, goal2, goal3]
 
 saving1 = Saving.create(name: "main", amount: 2000)
@@ -44,23 +44,23 @@ saving3 = Saving.create(name: "university", amount: 20000)
 savings = [saving1, saving2, saving3]
 
 income1 = Income.create(name: "primary", amount: 30000)
-income2 = Income.create(name: "OF", amount: 10000)
-income3 = Income.create(name: "Freelance", amount: 5000)
+income2 = Income.create(name: "tutoring", amount: 10000)
+income3 = Income.create(name: "freelance", amount: 5000)
 incomes = [income1, income2, income3]
 
 debt1 = Debt.create(name: "bank loan", amount: 5000)
 debt2 = Debt.create(name: "car", amount: 12500)
 debts = [debt1, debt2]
 
-expense1 = Expense.create(name: "food", amount: 500)
-expense2 = Expense.create(name: "light", amount: 40)
-expense3 = Expense.create(name: "gas", amount: 60)
-expense4 = Expense.create(name: "electricity", amount: 100)
-expense5 = Expense.create(name: "rent", amount: 1000)
-expense6 = Expense.create(name: "light bill", amount: 100)
-expense7 = Expense.create(name: "broadband", amount: 60)
-expense8 = Expense.create(name: "car", amount: 130)
-expense9 = Expense.create(name: "bank loan", amount: 100)
+expense1 = Expense.create(name: "food", input_amount: 500)
+expense2 = Expense.create(name: "eating out", input_amount: 40)
+expense3 = Expense.create(name: "gas", input_amount: 60)
+expense4 = Expense.create(name: "electricity", input_amount: 100)
+expense5 = Expense.create(name: "rent", input_amount: 1000)
+expense6 = Expense.create(name: "light bill", input_amount: 100)
+expense7 = Expense.create(name: "broadband", input_amount: 60)
+expense8 = Expense.create(name: "travel", input_amount: 130)
+expense9 = Expense.create(name: "entertainment", input_amount: 100)
 expenses = [expense1, expense2, expense3, expense4, expense5, expense6, expense6, expense7, expense8, expense9]
 
 
