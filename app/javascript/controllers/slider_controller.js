@@ -78,6 +78,10 @@ export class FinanceCalculationsService {
   }
 }
 
+function convertToCurrency(number){
+  return `£${Number(number).toLocaleString()}`
+}
+
 
 
 export default class extends Controller {
@@ -100,6 +104,8 @@ export default class extends Controller {
       "Disposable Income": results.disposableIncome
     }, {
       donut: true,
+      round: 0,
+      prefix: "£",
       library: {
         plugins: {
           legend: {
