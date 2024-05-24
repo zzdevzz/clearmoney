@@ -8,7 +8,8 @@
     </div>
   </div>
   <div class="mt-3">
-    <% if controller_name == "investments" %>
+    <% case controller_name %>
+    <% when "investments" %>
       <% profit = (item.amount - (item.buy_price * item.quantity)).round(2) %>
       <% color = profit.positive? ? "text-success" : "text-danger" %>
       <div class="d-flex align-items-center justify-content-between">
@@ -27,8 +28,14 @@
         library: chart_library_line_config
         %>
       </div>
+    <% when "incomes" %>
+      <h2> Annual Amount: <%= number_to_currency(item.amount, unit: "£") %></h2>
+    <% when "savings", "debts", "expenses" %>
+      <h2> Current Amount: <%= number_to_currency(item.amount, unit: "£") %></h2>
+    <% when "goals" %>
+      <h2> Amount Needed: <%= number_to_currency(item.amount, unit: "£") %></h2>
     <% else %>
-      <h2> Price bought for: <%= number_to_currency( item.amount , unit: "£") %></h2>
+      <h2> Purchase price: <%= number_to_currency(item.amount, unit: "£") %></h2>
     <% end %>
   </div>
 
