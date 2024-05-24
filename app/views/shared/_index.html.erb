@@ -13,6 +13,8 @@
             <%= pie_chart attribute.group("name").sum("amount"),
             donut: true, legend: "left", dataset: {borderWidth: 1},
             height: controller_name == "incomes" ? "150px" : "300px",
+            prefix: "£",
+            round: 0,
             library: chart_library_donut_config %>
           <%# </div> %>
           <% if controller_name == "incomes" %>
@@ -21,6 +23,7 @@
               height: "150px",
               donut: true, legend: "right", dataset: {borderWidth: 1},
               round: 0,
+              prefix: "£",
               library: chart_library_donut_config %>
             <%# </div> %>
           <% end %>
