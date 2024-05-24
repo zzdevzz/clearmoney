@@ -18,7 +18,7 @@
       <div class="transparent-card p-4 h-100">
         <h3> <%=@user.username.titleize %>'s Breakdown </h3>
         <h4> Annual Income: <%= number_to_currency(@incomes.sum(&:amount) , unit: "£") %> </h4>
-        <h4> Net Worth: <%= number_to_currency(@savings.sum(&:amount) + @investments.sum(&:amount) , unit: "£") %> </h4>
+        <h4> Net Worth: <%= number_to_currency(@savings.sum(&:amount) + @investments.sum(&:amount) - @debts.sum(&:amount), unit: "£") %> </h4>
         <div class="d-flex flex-column justify-content-around h-75">
           <%= column_chart yearly, title: "Annual Overview", height: "200px", prefix: "£", round: 0,colors: [greencolour, redcolour], library: chart_library_bar_config %>
           <%= column_chart fixed, title: "Financial Overview", height: "150px", prefix: "£", round: 0,colors: [greencolour, redcolour, greencolour, greencolour], library: chart_library_bar_config%>
