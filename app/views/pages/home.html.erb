@@ -1,7 +1,3 @@
-
-  <%# <video autoplay muted loop>
-    <source src="/app/assets/images/accounting-video.mp4" type="video/mp4">
-  </video> %>
 <section class="landing">
   <%= video_tag asset_path("accounting-video.mp4"), autoplay: true, loop: true, muted: true, class: "video" %>
   <div class="navbar-start d-flex align-items-center ms-5 my-3">
@@ -10,9 +6,9 @@
     <% end %>
     <h1 class="fw-bold d-inline-block text-white mb-0">ClearMoney</h1>
   </div>
-  <div class="content credit-card ml-5 p-5">
-    <h2 class="text-uppercase fw-light fs-5">Managing Money just got easier.</h2>
-    <h3 class="text-capitalize fw-bold strip fs-4">Ready to learn about your money? </h3>
+  <div id="credit-card" class="content ml-5 p-5">
+    <h2 class="text-uppercase fw-light fs-4">Managing Money just got easier.</h2>
+    <h3 class="text-capitalize fw-bold strip">Ready to learn about your money? </h3>
     <p>“You can’t improve what you don’t measure”.
         No need to be a whiz kid with the numbers. We make it easy for you to understand your money. Everything is visualized so you can see your money. clearly. </p>
     <%= link_to "Get Started", dashboard_path, class: "btn btn-warning" %>
@@ -21,22 +17,22 @@
 <section class="content-info bg-light">
   <div class="w-100 container min-vh-100 d-flex align-items-center" >
     <div class=" w-100 container">
-      <h2 class="text-center fs-1 fw-bold mb-5 color-purple"> What we believe in</h2>
-      <div class="d-flex justify-content-between mt-5">
-        <div class="item">
+      <h2 class="text-center fs-1 fw-bold mb-5 color-purple mt-5"> What we believe in</h2>
+      <div class="d-flex justify-content-center justify-content-xl-between mt-xl-5 flex-wrap selling-points">
+        <div class="item mt-5">
           <h4>Simplicity</h4>
           <i class="fa-regular fa-lightbulb"></i>
           <p>Your finances should be straightforward and stress-free.</p>
         </div>
-        <div class="item">
+        <div class="item mt-5">
           <h4>Embracing Knowledge</h4>
           <i class="fa-solid fa-graduation-cap"></i>
           <p>Understanding your finances is the first step to growing them.</p>
         </div>
-        <div class="item">
+        <div class="item mt-5 ">
           <h4>Personalisation</h4>
           <i class="fa-regular fa-user"></i>
-          <p>Every financial journey is unique.</p>
+          <p class="mb-5 mb-xl-0">Customize your information. Because every financial journey is unique.</p>
         </div>
       </div>
     </div>
@@ -46,8 +42,8 @@
 <section class="min-vh-100 d-flex align-items-center gradient-under light-mode">
   <div class="w-100 container">
     <h3 class="text-center fs-1 fw-bold mb-5">Try it yourself.</h3>
-    <div class="d-flex justify-content-around align-items-center">
-      <div class="slidecontainer d-flex flex-column w-50" data-controller="slider">
+    <div class="d-flex flex-column flex-lg-row justify-content-around align-items-center">
+      <div class="slidecontainer d-flex flex-column dw-50 mb-4 mb-lg-0 px-2 px-lg-0" data-controller="slider">
         <h4 class="fs-5">See how your income is broken down annually!</h4>
         <input type="range" min="10000" max="150000" value="30000" step="500" class="slider" id="myRange1" data-action="input->slider#updateChart" data-slider-target="input1">
         <div class="d-flex justify-content-between">
@@ -59,7 +55,7 @@
       <div id="myChart"></div>
     </div>
     <%= link_to "Start Understanding Your Money!", dashboard_path,
-    class: "btn btn-warning d-grid gap-2 mt-5 col-3 mx-auto" %>
+    class: "btn btn-warning d-grid gap-2 mt-5 col-8 col-md-5 col-lg-4 mx-auto" %>
   </div>
 </section>
 <%= render "shared/footer" %>

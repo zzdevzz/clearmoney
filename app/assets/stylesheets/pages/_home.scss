@@ -22,19 +22,34 @@ video {
   position: relative;
 }
 
+#credit-card {
+
+  h2{
+
+  }
+
+  h3{
+
+  }
+}
 
 .landing .content {
   color: whitesmoke;
   position: absolute;
-  top: 50%; left: 20%; transform: translate(-20%, -50%);
-  width: 40%;
-  min-width: 470px;
+  top: 50%; left: 22.5%; transform: translate(-20%, -50%);
+  width: 90%;
+  // min-width: 450px;
   background: rgba(72, 47, 143, 0.1);
   backdrop-filter: brightness(1.5) blur(1rem);
   color: #f1f1f1;
   border-radius: 2rem;
   transition: all 0.3s;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+
+  @media screen and (min-width: 660px) {
+    width: 600px;
+  }
+
 
   &:hover{
     transform-origin: center;
@@ -55,11 +70,19 @@ video {
 
 }
 
+// div .selling-points{
+//   justify-content: center;
+
+//   @media screen {
+
+//   }
+// }
+
 
 .item {
 
   width: 25%;
-  min-width: 200px;
+  min-width: 300px;
   text-align: center;
   transition: all 1s;
   color: $theme-purple;
@@ -79,11 +102,10 @@ video {
   i{
     font-size: 4rem;
     margin: 1rem;
-  }
 
-  p{
 
   }
+
 }
 
 .slidecontainer {
