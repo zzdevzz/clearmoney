@@ -1,5 +1,5 @@
 <h1 class="text-white my-5">
-  <%= "#{action_name.titleize} #{controller_name.titleize.sub("s", "")}" %>
+  <%= "#{action_name.titleize} #{controller_name.titleize.sub(/s\z/, '')}" %>
 </h1>
 
 <%= simple_form_for(@income, html: { class: 'text-white ' }) do |f| %>
