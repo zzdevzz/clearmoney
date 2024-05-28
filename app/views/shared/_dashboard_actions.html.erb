@@ -1,45 +1,49 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon col-2 p-0 transparent-card overflow-hidden" id="navbarSupportedContent">
-  <ul class="dashboard-actions navbar-nav flex-sm-column h-100 me-auto me-0">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon
+col-lg-2 p-0 transparent-card overflow-hidden py-3 py-lg-0"
+id="navbarSupportedContent">
+  <ul class="dashboard-actions navbar-nav flex-row h-100 me-auto me-0
+  justify-content-evenly
+  flex-lg-column">
     <li class="nav-item active">
-      <%= link_to user_path(current_user), class: "nav-link text-reset btn-sm active", data: { actions_target: "button", action: "click->actions#highlightButton", turbo_frame: "content" } do %>
+      <%= link_to user_path(current_user), class: "nav-link text-reset btn-sm active ", data: { actions_target: "button", action: "click->actions#highlightButton", turbo_frame: "content" } do %>
         <i class="fa-regular fa-user"></i>
-        <h3>Summary</h3>
+        <h3 class="d-none d-lg-block ">Summary</h3>
       <% end %>
     </li>
     <li class="nav-item active">
       <%= link_to incomes_path, class: "nav-link text-reset btn-sm", data: { actions_target: "button", action: "click->actions#highlightButton", turbo_frame: "content" } do %>
         <i class="fa-solid fa-coins"></i>
-        <h3>Income</h3>
+        <h3 class="d-none d-lg-block">Income</h3>
       <% end %>
     </li>
     <li class="nav-item active">
       <%= link_to savings_path, class: "nav-link text-reset btn-sm", data: { actions_target: "button", action: "click->actions#highlightButton", turbo_frame: "content" } do %>
         <i class="fa-solid fa-building-columns"></i>
-        <h3>Savings</h3>
+        <h3 class="d-none d-lg-block">Savings</h3>
       <% end %>
     </li>
     <li class="nav-item active">
       <%= link_to expenses_path, class: "nav-link text-reset btn-sm", data: { actions_target: "button", action: "click->actions#highlightButton", turbo_frame: "content" } do %>
         <i class="fa-solid fa-cart-plus"></i>
-        <h3>Expenses</h3>
+        <h3 class="d-none d-lg-block">Expenses</h3>
       <% end %>
     </li>
     <li class="nav-item active">
       <%= link_to debts_path, class: "nav-link text-reset btn-sm", data: { actions_target: "button", action: "click->actions#highlightButton", turbo_frame: "content" } do %>
         <i class="fa-solid fa-credit-card"></i>
-        <h3>Debts</h3>
+        <h3 class="d-none d-lg-block">Debts</h3>
       <% end %>
     </li>
     <li class="nav-item active">
       <%= link_to investments_path, class: "nav-link text-reset btn-sm", data: { actions_target: "button", action: "click->actions#highlightButton", turbo_frame: "content" } do %>
         <i class="fa-solid fa-money-bill-trend-up"></i>
-        <h3>Investments</h3>
+        <h3 class="d-none d-lg-block">Investments</h3>
       <% end %>
     </li>
     <li class="nav-item active">
       <%= link_to goals_path, class: "nav-link text-reset btn-sm", data: { actions_target: "button", action: "click->actions#highlightButton", turbo_frame: "content" } do %>
         <i class="fa-solid fa-bullseye"></i>
-        <h3>Goals</h3>
+        <h3 class="d-none d-lg-block">Goals</h3>
       <% end %>
     </li>
   </ul>

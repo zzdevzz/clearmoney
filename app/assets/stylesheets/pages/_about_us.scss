@@ -1,23 +1,7 @@
-// .team {
-//   display: flex;
-//   justify-content: space-around;
-//   flex-wrap: wrap;
-//   padding: 20px;
-//   margin-top: 50px;
-// }
-// .heading {
-//   margin-top: 15px;
-// }
-
-
 .team-member {
-  // margin-top: 0px;
-  // background: #5f4e655c;
   width: 300px;
   margin: 2rem;
   padding: 1.5rem;
-  // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  // border-radius: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -51,18 +35,12 @@
   max-width: 100px;
   display: block;
   margin: 0 auto;
-
   width: 98px;
   height: 100px;
 }
 
 .write-up {
   margin-top: 70px ;
-  // font-size: 20px;
   height: 100%;
-  // text-align: center;
-  // display: flex;
-  // justify-content: center;
-  // width: 100%;
   color: white;
 }

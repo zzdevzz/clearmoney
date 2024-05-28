@@ -12,8 +12,8 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-        <% if user_signed_in? %>
+      <% if user_signed_in? %>
+        <ul class="navbar-nav me-auto">
           <li class="nav-item active">
             <%= link_to "Home", root_path, class: "nav-link text-reset" %>
           </li>
@@ -23,24 +23,32 @@
           <li class="nav-item">
             <%= link_to "Learn", articles_path, class: "nav-link text-reset" %>
           </li>
-          <li class="nav-item">
+          <li class="nav-item me-3">
             <%= link_to "Dashboard", dashboard_path, class: "nav-link text-reset" %>
           </li>
           <li class="nav-item dropdown">
           <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= image_tag "https://avatars.githubusercontent.com/u/91223087?v=4", class: "avatar", alt: "dropdown menu" %>
+            <%= image_tag "baby-money-cartoon-character-with-pacifier-free-vector-cropped.jpg", class: "avatar", alt: "dropdown menu" %>
           </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "My Profile", "#", class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
           </li>
-        <% else %>
+        </ul>
+      <% else %>
+        <ul class="navbar-nav me-auto
+        flex-row flex-md-col my-3 justify-content-center
+        flex-md-col my-md-0 justify-content-start">
           <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+            <%= link_to "Login", new_user_session_path, class: "nav-link text-reset
+            cta-btn
+            mx-2 px-4" %>
           </li>
           <li class="nav-item active">
-            <%= link_to "About_us", root_path, class: "nav-link" %>
+            <%= link_to "Sign Up", new_user_registration_path, class: "nav-link text-reset
+            cta-btn sign-up
+            px-4" %>
           </li>
         <% end %>
       </ul>

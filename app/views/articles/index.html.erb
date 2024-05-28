@@ -10,7 +10,13 @@
         %>
       <%= submit_tag "Search", name: "", class: "ms-3 btn btn-primary" %>
     <% end %>
-    <button class="btn btn-primary align-self-end mt-2" id="aiicon"type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><i class="fa-solid fa-graduation-cap"></i></button>
+    <button class="btn btn-primary align-self-end mt-2"
+    id="aiicon"type="button"
+    data-bs-toggle="offcanvas"
+    data-bs-target="#offcanvasScrolling"
+    aria-controls="offcanvasScrolling">
+      <i class="fa-solid fa-graduation-cap chatbot-icon"></i>
+    </button>
   </div>
 </div>
 
@@ -33,7 +39,8 @@
 <div class="">
   <div class="row mb-5 gx-5">
     <% @articles.each_with_index do |article, index| %>
-      <% photo_url = image_path "https://source.unsplash.com/random/?#{index},finance" %>
+      <%# <% photo_url = image_path "https://source.unsplash.com/random/?#{index},finance" api is down%>
+      <% photo_url = asset_path("articles/#{index}.jpg") %>
       <div class="col-lg-4 col-md-6 col-12">
         <a href="<%=article.url%>" target="_blank">
           <div class="flip-card mt-5">
