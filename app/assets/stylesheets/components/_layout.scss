@@ -1,22 +1,36 @@
 .full-frame{
-  height: calc(100vh - $navbar-height);
+  height: 100vh;
 
-}
-
-.light-mode {
-  color: whitesmoke;
-}
-
-
-@media (min-width: 992px) {
-  .vh-lg-100 {
-    height: 100vh;
+  @media (min-width: 992px) {
+    max-height: 1000px;
   }
+
 }
+
+.vh-lg-100 {
+  height: auto;
+
+  @media (min-width: 992px) {
+    height: 100vh;
+
+  }
+
+  @media (min-width: 1400px) {
+    height: 800px;
+   }
+
+}
+
+
+// @media (min-width: 992px) {
+//   .vh-lg-100 {
+//     height: 700px;
+//   }
+// }
 
 /* Optional: Ensure that height is auto or a different value on smaller screens */
-@media (max-width: 991px) {
-  .vh-lg-100 {
-    height: auto; /* or any other appropriate value */
-  }
-}
+// @media (max-width: 991px) {
+//   .vh-lg-100 {
+//     height: auto; /* or any other appropriate value */
+//   }
+// }
