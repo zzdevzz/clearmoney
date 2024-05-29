@@ -12,11 +12,13 @@
 
   @media (min-width: 992px) {
     height: 100vh;
+    max-height: 100vh;
 
   }
 
   @media (min-width: 1400px) {
     height: 800px;
+    max-height: 800px;
    }
 
 }

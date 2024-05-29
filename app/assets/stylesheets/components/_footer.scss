@@ -8,11 +8,19 @@ $footer-height: 60px;
   background: $theme-purple;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  // height: $footer-height;
   padding: 0px 50px;
   color: $text-light
+
 }
+
+.footer-text p{
+  font-size: 0.7rem;
+
+  @media screen and (min-width: 768px) {
+    font-size: 1rem;
+  }
+}
+
 .footer-links {
   display: flex;
   align-items: center;
@@ -21,7 +29,7 @@ $footer-height: 60px;
 .footer-links a:not(.avatar-link) {
   opacity: 0.8;
   text-decoration: none;
-  font-size: .75rem;
+  font-size: .7rem;
   font-weight: 600;
 
   @media screen and (min-width: 500px) {
