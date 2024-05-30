@@ -6,8 +6,12 @@ class Investment < ApplicationRecord
   validates :quantity, presence: true
   # validates :amount, presence: true
 
-  before_create :set_info_current, :calculate_amount, :set_info_history
+  before_create :downcase_fields, :set_info_current, :calculate_amount, :set_info_history
   before_save :calculate_amount
+
+  def downcase_fields
+    self.name.downcase!
+  end
 
   def calculate_amount
     if quantity.present? && price_current.present?
